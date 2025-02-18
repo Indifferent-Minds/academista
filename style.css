@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+
+.barra {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1px;
+  background-color: rgba(0, 0, 0, 0.363);
+  backdrop-filter: blur(10px);
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  flex-wrap: wrap;
+}
+
+.barra-izquierda {
+  display: flex;
+  align-items: center;
+}
+
+.barra-izquierda img {
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.barra-derecha {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.barra-derecha a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.barra-derecha a:hover {
+  color: #9ecdff;
+}
+
+.nombrebarra {
+  font-family: 'Geist Mono';
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.nombrebarra:hover {
+  color: #9ecdff;
+}
+
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+p {
+  margin: 0;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.planescontainer {
+  background-image: url('./img/IMG_0039.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+
+.option {
+  display: inline-block;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.optionmenu {
+  display: inline-block;
+  margin: 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.option img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease;
+}
+
+.option:hover img {
+  opacity: 0.8;
+}
+
+.option-text {
+  position: relative;
+  z-index: 1;
+}
+
+.option-botonempezar {
+  position: relative;
+  z-index: 1;
+}
+
+.ciencia {
+  background-color: #6ab7ff;
+}
+
+.ciencia1 {
+  background-color: rgba(106, 183, 255, 0.852)f;
+}
+
+.letras {
+  background-color: #ff9f6a;
+}
+
+.otro {
+  background-color: #a6ff90;
+}
+
+.libreria1 {
+  background-color: aqua;
+}
+
+.option:hover {
+  transform: scale(1.1);
+}
+
+.optionmenu:hover {
+  transform: scale(1.1);
+}
+
+.divfinaldepagina {
+  background-color: #000000;
+  display: flex;
+  align-items: left;
+
+}
+
+.empezarboton {
+  background-color: #6ab7ffae;
+  margin-top: 520px;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Estilo del botón */
+.dropbtn {
+  background-color: #3498db;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Contenedor del desplegable */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Contenido del desplegable (oculto por defecto) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Enlaces del desplegable */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Cambiar color de fondo en hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Mostrar el desplegable cuando se hace clic en el botón */
+.dropdown.show {
+  display: block;
+}
+
+.barra-de-arriba {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.contenedor {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.apartado {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.contenido {
+  display: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  /* Bordes redondeados */
+  margin-top: 5px;
+  margin-top: 3px;
+}
+
+.mailto {
+  width: 100%;
+  padding: 10px;
+  background-color: #1538F4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.mailto {
+  background-color: #1538F4;
+}
+
+.foroto {
+  background-color: #60D03E;
+}
+
+.foroto {
+  width: 100%;
+  padding: 10px;
+  background-color: #60D03E;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.infoacademista {
+  background-color: #E93363;
+}
+
+.infoacademista {
+  width: 100%;
+  padding: 10px;
+  background-color: #E93363;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logoinicial {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  justify-content: left;
+  align-items: left;
+}
+
+.content1 {
+  background-image: url('./img/IMG_0039.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+
+
+
+.textoindice {
+  font-family: 'Arial', sans-serif;
+}
+
+.gifinicio {
+  max-width: 100%;
+  max-height: 700px;
+}
+
+.fondobannerinicio {
+  background-image: url(./img/banner.jpg);
+  height: 610px;
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  display: flex;
+}
+
+.header {
+  font-size: 20px;
+}
+
+.header {
+  position: relative;
+  height: 25vh;
+  overflow: hidden;
+}
+
+.content23 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+
+.animated-text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  margin-bottom: 20px;
+}
+
+.animated-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.dpor {
+  font-size: 40px;
+  font-family: Arial, 'Times New Roman', Times, serif;
+  font-weight: 300;
+  background-image: url(./img/IMG_0039.jpg);
+}
+
+.dporimagen {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  margin-bottom: 20px;
+  width: 50%;
+
+}
+
+.dporimagen.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contadorcontenido {
+  background-image: url(./img/IMG_0039.jpg);
+  border-radius: 20px;
+  height: 700px;
+}
+
+
+.contadorinfo {
+  width: 350px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.swiper-container {
+  width: 600px;
+  margin: auto;
+  position: relative;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: #ffffff;
+  /* Fondo amarillo */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: auto;
+  margin-left: 8px;
+
+}
+
+.card:hover {
+  cursor: grab;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: -50px;
+}
+
+#swiper-next {
+  right: -1px;
+  /* Ajusta el valor según sea necesario */
+}
+
+.verticaldiv {
+  height: auto;
+  width: 150px;
+  color: white;
+}
+
+
+.libreria {
+  justify-content: center;
+}
+
+.opinionesdelacomunidad {
+  margin-top: -75px;
+  background-color: white;
+}
+
+
+.whatis {
+    background-color: #FFFFFF;
+}
+
+.whatistitle {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.whatistext {
+    font-family: Arial;
+    width: 801px;
+    font-size: 22px;
+    margin-bottom: 50px;
+}
