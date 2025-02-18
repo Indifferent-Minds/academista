@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale1.0">
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Academista &#8212; Aprende todo tipo de cosas" />
+  <meta property="og:description"
+    content="¿Te gustaria aprender o enseñar algo? ¡Entonces esta es el sitio indicado para tipo!" />
+  <meta property="og:url" content="academista" />
+  <meta property="og:site_name" content="Academista" />
+  <link rel="shortcut icon" href="./img/logo.png">
+  <title>Inicio | Academista</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+
+    .barra {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1px;
+      background-color: rgba(0, 0, 0, 0.363);
+      backdrop-filter: blur(10px);
+      color: white;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      flex-wrap: wrap;
+    }
+
+    .barra-izquierda {
+      display: flex;
+      align-items: center;
+    }
+
+    .barra-izquierda img {
+      height: 40px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+
+    .barra-derecha {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 15px;
+    }
+
+    .barra-derecha a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .barra-derecha a:hover {
+      color: #9ecdff;
+    }
+
+    .nombrebarra {
+      font-family: 'Geist Mono';
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+
+    .nombrebarra:hover {
+      color: #9ecdff;
+    }
+
+
+
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #F5F8FF;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+
+    p {
+      margin: 0;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .planescontainer {
+      background-image: url('./img/IMG_0039.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+
+    .option {
+      display: inline-block;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 20px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .optionmenu {
+      display: inline-block;
+      margin: 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 20px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .option img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .option:hover img {
+      opacity: 0.8;
+    }
+
+    .option-text {
+      position: relative;
+      z-index: 1;
+    }
+
+    .option-botonempezar {
+      position: relative;
+      z-index: 1;
+    }
+
+    .ciencia {
+      background-color: #6ab7ff;
+    }
+
+    .ciencia1 {
+      background-color: rgba(106, 183, 255, 0.852)f;
+    }
+
+    .letras {
+      background-color: #ff9f6a;
+    }
+
+    .otro {
+      background-color: #a6ff90;
+    }
+
+    .libreria1 {
+      background-color: aqua;
+    }
+
+    .option:hover {
+      transform: scale(1.1);
+    }
+
+    .optionmenu:hover {
+      transform: scale(1.1);
+    }
+
+    .divfinaldepagina {
+      background-color: #000000;
+      display: flex;
+      align-items: left;
+
+    }
+
+    .empezarboton {
+      background-color: #6ab7ffae;
+      margin-top: 520px;
+      font-size: 25px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Estilo del botón */
+    .dropbtn {
+      background-color: #3498db;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Contenedor del desplegable */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Contenido del desplegable (oculto por defecto) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    /* Enlaces del desplegable */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    /* Cambiar color de fondo en hover */
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* Mostrar el desplegable cuando se hace clic en el botón */
+    .dropdown.show {
+      display: block;
+    }
+
+    .barra-de-arriba {
+      display: flex;
+      justify-content: space-between;
+    }
+
+
+    .contenedor {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .apartado {
+      background-color: #f0f0f0;
+      padding: 10px;
+      margin-bottom: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      border-radius: 5px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .contenido {
+      display: none;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      /* Bordes redondeados */
+      margin-top: 5px;
+      margin-top: 3px;
+    }
+
+    .mailto {
+      width: 100%;
+      padding: 10px;
+      background-color: #1538F4;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .mailto {
+      background-color: #1538F4;
+    }
+
+    .foroto {
+      background-color: #60D03E;
+    }
+
+    .foroto {
+      width: 100%;
+      padding: 10px;
+      background-color: #60D03E;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .infoacademista {
+      background-color: #E93363;
+    }
+
+    .infoacademista {
+      width: 100%;
+      padding: 10px;
+      background-color: #E93363;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .logoinicial {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      justify-content: left;
+      align-items: left;
+    }
+
+    .content1 {
+      background-image: url('./img/IMG_0039.jpg');
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+    }
+
+
+
+    .textoindice {
+      font-family: 'Arial', sans-serif;
+    }
+
+    .gifinicio {
+      max-width: 100%;
+      max-height: 700px;
+    }
+
+    .fondobannerinicio {
+      background-image: url(./img/banner.jpg);
+      height: 610px;
+      background-size: cover;
+      background-position: center;
+      justify-content: center;
+      display: flex;
+    }
+
+    .header {
+      font-size: 20px;
+    }
+
+    .header {
+      position: relative;
+      height: 25vh;
+      overflow: hidden;
+    }
+
+    .content23 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+
+
+    .animated-text {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      margin-bottom: 20px;
+    }
+
+    .animated-text.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    .dpor {
+      font-size: 40px;
+      font-family: Arial, 'Times New Roman', Times, serif;
+      font-weight: 300;
+      background-image: url(./img/IMG_0039.jpg);
+    }
+
+    .dporimagen {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      margin-bottom: 20px;
+      width: 50%;
+
+    }
+
+    .dporimagen.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .contadorcontenido {
+      background-image: url(./img/IMG_0039.jpg);
+      border-radius: 20px;
+      height: 700px;
+    }
+
+
+    .contadorinfo {
+      width: 350px;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+    .swiper-container {
+      width: 600px;
+      margin: auto;
+      position: relative;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background-color: #ffffff;
+      /* Fondo amarillo */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: auto;
+      margin-left: 8px;
+
+    }
+
+    .card:hover {
+      cursor: grab;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #000;
+    }
+
+    .swiper-button-prev {
+      left: 10px;
+    }
+
+    .swiper-button-next {
+      right: -50px;
+    }
+
+    #swiper-next {
+      right: -1px;
+      /* Ajusta el valor según sea necesario */
+    }
+
+    .verticaldiv {
+      height: auto;
+      width: 150px;
+      color: white;
+    }
+
+
+    .libreria {
+      justify-content: center;
+    }
+
+    .opinionesdelacomunidad {
+      margin-top: -75px;
+      background-color: white;
+    }
+  </style>
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="barra">
+    <a href="#" style="color: white; text-decoration: none;">
+      <div class="barra-izquierda">
+        <p>‎‎ ‎</p>
+        <img src="./img/logo.png" draggable="false">
+        <p class="nombrebarra">Academista</p>
+      </div>
+    </a>
+
+    <div class="barra-derecha">
+      <a href="acerca-de">Acerca de</a>
+      <a href="#planes">Planes</a>
+      <a href="contacto">Contacto</a>
+      <a href="foro">Foro</a>
+      <a href="login" style="margin-right: 20px;">Iniciar Sesión</a>
+    </div>
+  </div>
+
+
+
+
+
+  <center>
+
+
+    <div class="fondobannerinicio">
+      <a href="#qqah" class="option empezarboton">
+        <span class="option-botonempezar">
+          Empezar
+        </span>
+      </a>
+    </div>
+
+
+
+    <div class="container">
+      <h1 class="animated-text">Elige lo que quieres aprender:</h1>
+      <a href="ciencia" class="option ciencia">
+        <img src="./img/ciencia.png" alt="Ciencia" draggable="false">
+        <span class="option-text">
+          <font color="black">Ciencia</font>
+        </span>
+      </a>
+      <a href="letras" class="option letras">
+        <img src="./img/letras.png" alt="Letras" draggable="false">
+        <span class="option-text">
+          <font color="black">Letras</font>
+        </span>
+      </a>
+      <a href="otro" class="option otro">
+        <img src="./img/otros.png" alt="Otro" draggable="false">
+        <span class="option-text">
+          <font color="black">Otro</font>
+        </span>
+      </a>
+    </div>
+
+  </center>
+  </div>
+
+
+  <div class="cosas123">
+
+
+    <div class="content1">
+      <img src="./img/Espacio apartados.png" draggable="false">
+      <div class="contenedor">
+        <div class="apartado" class="animated-text" onclick="mostrarContenido('contenido1')">¿Qué es Academista? 🡻
+        </div>
+        <div id="contenido1" class="contenido">
+          <img src="./img/1.png" draggable="false">
+          <a href="acerca-de" class="infoacademista">
+            <span class="option-text">
+              <font type="white">Mas información</font>
+            </span>
+          </a>
+        </div>
+
+        <div class="apartado" class="animated-text" onclick="mostrarContenido('contenido2')">¿Como puedo subir mi propio
+          contenido? 🡻</div>
+        <div id="contenido2" class="contenido">
+          <img src="./img/2.png" draggable="false">
+          <a href="mailto:academista@indifferentminds.org" class="mailto">
+            <span class="option-text">
+              <font type="white">Enviar mail</font>
+            </span>
+          </a>
+        </div>
+
+        <div class="apartado" class="animated-text" onclick="mostrarContenido('contenido3')">Foro de Academista 🡻</div>
+        <div id="contenido3" class="contenido">
+          <img src="./img/foroacademista.png" draggable="false">
+          <a href="Foro" class="foroto">
+            <span class="option-text">
+              <font type="white">Ir al foro</font>
+            </span>
+          </a>
+        </div>
+
+        <div class="apartado" class="animated-text" onclick="mostrarContenido('contenido4')">Apartado 4 🡻</div>
+        <div id="contenido4" class="contenido">
+          Contenido del apartado 4.
+        </div>
+        <img src="./img/Espacio apartados.png" draggable="false">
+      </div>
+    </div>
+
+
+
+
+    <div
+      style="background-color: white; margin-top: -20px; margin-bottom: -20px; background-image: url(./img/libreria.jpeg); background-size: cover; background-position: center right;">
+      <div class="animated-text">
+        <center>
+          <h3>‎ </h3>
+          <h1 style="margin-bottom: -10px;">Descubre nuestra Libreria</h1>
+          <h3>Llena de informacion interesante para llenarte de ideas e imaginacion</h3>
+          <a href="./libreria/" class="option libreria1">
+            <span class="option-text">
+              <font color="black"><b>Acceder</b></font>
+            </span>
+          </a>
+          <h3>‎ </h3>
+        </center>
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="planescontainer">
+      <center>
+        <h1 class="animated-text" id="planes">Planes</h1>
+        <img src="./img/EjemploPlanes.png" draggable="false" class="animated-text">
+        <img src="./img/EjemploPlanes.png" draggable="false" class="animated-text">
+        <img src="./img/EjemploPlanes.png" draggable="false" class="animated-text">
+
+
+
+      </center>
+    </div>
+
+
+
+    <div class="dpor">
+      <center>
+        <img src="./img/dpor.png" class="dporimagen" draggable="false">
+      </center>
+    </div>
+
+
+
+
+
+
+
+  </div> <!--Final div gif decoracion-->
+
+  <div class="contadorcontenido">
+    <h3>‎</h3>
+
+    <center>
+      <h2 class="animated-text">
+        <font color="8ee5ee" style="font-family: Arial, Helvetica, sans-serif; font-size: 55px;">
+          Crecimiento de academista
+        </font>
+      </h2>
+
+      <h1>‎</h1>
+
+      <div class="contadorinfo">
+        <h2 class="animated-text contador" data-numero="120000">
+          <font color="3e86f0" style="font-family: Arial, Helvetica, sans-serif; font-size: 55px;">
+            +<span class="numero">0</span> min
+          </font>
+        </h2>
+        <h3 class="animated-text">
+          <font color="1e1e1e" style="font-family: Arial, Helvetica, sans-serif; font-size: 20px;">
+            Más de 120.000 minutos en videos educativos subidos por la comunidad
+          </font>
+        </h3>
+
+        <h2 class="animated-text contador" data-numero="60">
+          <font color="3e86f0" style="font-family: Arial, Helvetica, sans-serif; font-size: 55px;">
+            +<span class="numero">0</span> Videos
+          </font>
+        </h2>
+        <h3 class="animated-text">
+          <font color="1e1e1e" style="font-family: Arial, Helvetica, sans-serif; font-size: 20px;">
+            Más de 60 videos en total disponibles para aprender
+          </font>
+        </h3>
+
+        <h2 class="animated-text contador" data-numero="30">
+          <font color="3e86f0" style="font-family: Arial, Helvetica, sans-serif; font-size: 55px;">
+            +<span class="numero">0</span> Usuarios
+          </font>
+        </h2>
+        <h3 class="animated-text">
+          <font color="1e1e1e" style="font-family: Arial, Helvetica, sans-serif; font-size: 20px;">
+            Más de 30 usuarios registrados en la comunidad educativa
+          </font>
+        </h3>
+      </div>
+
+      <h3>‎</h3>
+    </center>
+  </div>
+
+
+
+
+
+
+
+
+  <h1>‎ </h1>
+
+
+
+
+  <div class="animated-text opinionesdelacomunidad">
+    <center>
+      <h3>‎ </h3>
+      <h1>
+        <font color="3e86f0" style="font-family: Arial, Helvetica, sans-serif; font-size: 55px;">Opiniones de la
+          comunidad</font>
+      </h1>
+    </center>
+
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="./img/Opiniones.png" style="width: 450px;">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="./img/Opiniones.png" style="width: 450px;">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="./img/Opiniones.png" style="width: 450px;">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="./img/Opiniones.png" style="width: 450px;">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="./img/Opiniones.png" style="width: 450px;">
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next" id="swiper-next"></div>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const slides = document.querySelectorAll('.swiper-slide');
+        const middleIndex = Math.floor(slides.length / 2);
+
+        const swiper = new Swiper('.swiper-container', {
+          initialSlide: middleIndex,
+          slidesPerView: 1,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      });
+    </script>
+    <h3>‎ </h3>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="linea-negra"></div>
+  <div class="divfinaldepagina">
+    <img src="./img/a-by-im.png" draggable="false" style="width: 30%; min-width: 300px;">
+
+    <div class="verticaldiv">
+      <h4
+        style="text-decoration: underline; text-decoration-color: grey; text-underline-offset: 10px; text-decoration-thickness: 1px; margin-left: 20px;">
+        <font color="5b5b5b">Acerca de</font>
+      </h4>
+
+      <a href="acerca-de">
+        <p style="margin-left: 20px; margin-bottom: 3px;">
+          <font color="white">Sobre academista</font>
+        </p>
+      </a>
+      <a href="https://www.indifferentminds.org" target="_blank">
+        <p style="margin-left: 20px; margin-bottom: 3px;">
+          <font color="white">Indifferent minds</font>
+        </p>
+      </a>
+      <a href="contacto">
+        <p style="margin-left: 20px;">
+          <font color="white">Contacto</font>
+        </p>
+      </a>
+
+
+
+    </div>
+
+    <div style="margin-right: 20px;"></div>
+
+    <div class="verticaldiv">
+      <h4
+        style="text-decoration: underline; text-decoration-color: grey; text-underline-offset: 10px; text-decoration-thickness: 1px; margin-left: 20px;">
+        <font color="5b5b5b">Recursos</font>
+      </h4>
+
+      <a href="foro">
+        <p style="margin-left: 20px; margin-bottom: 3px;">
+          <font color="white">Foro</font>
+        </p>
+      </a>
+      <a href="login">
+        <p style="margin-left: 20px; margin-bottom: 3px;">
+          <font color="white">Iniciar Sesion</font>
+        </p>
+      </a>
+      <a href="index#planes">
+        <p style="margin-left: 20px; margin-bottom: 3px;">
+          <font color="white">Planes</font>
+        </p>
+      </a>
+
+
+    </div>
+
+
+  </div>
+</body>
+
+
+
+
+
+
+
+
+<script>
+
+
+
+
+
+
+
+  function toggleMenu() {
+    const menu = document.getElementById('myMenu');
+    menu.classList.toggle('active');
+  }
+  function toggleDropdown() {
+    var dropdown = document.getElementById("myDropdown");
+    dropdown.classList.toggle("show");
+  }
+  function mostrarContenido(id) {
+    var contenido = document.getElementById(id);
+    if (contenido.style.display === "none") {
+      contenido.style.display = "block";
+    } else {
+      contenido.style.display = "none";
+    }
+  }
+
+
+
+
+
+
+  /*Animaciones textos*/
+  document.addEventListener('DOMContentLoaded', function () {
+    const animatedTexts = document.querySelectorAll('.animated-text');
+
+    const handleScroll = () => {
+      animatedTexts.forEach(text => {
+        const textPosition = text.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (textPosition < windowHeight - 100) {
+          text.classList.add('visible');
+        } else {
+          text.classList.remove('visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+  });
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const animatedTexts = document.querySelectorAll('.dporimagen');
+
+    const handleScroll = () => {
+      animatedTexts.forEach(text => {
+        const textPosition = text.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (textPosition < windowHeight - 100) {
+          text.classList.add('visible');
+        } else {
+          text.classList.remove('visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+  });
+
+
+
+
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const animatedTextElements = document.querySelectorAll(".animated-text");
+    const contadorElements = document.querySelectorAll(".contador");
+
+    // Función para animar el conteo de números con tiempo personalizado
+    function contarNumero(element, numeroFinal, duracion) {
+      let contadorActual = 0;
+      const incremento = Math.ceil(numeroFinal / (duracion / 20));
+      const velocidad = 20;
+
+      const intervalId = setInterval(() => {
+        contadorActual += incremento;
+        if (contadorActual >= numeroFinal) {
+          contadorActual = numeroFinal;
+          clearInterval(intervalId);
+        }
+        element.querySelector(".numero").textContent = contadorActual.toLocaleString();
+      }, velocidad);
+    }
+
+    // Función para verificar si el elemento está en el viewport
+    function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return rect.top < window.innerHeight && rect.bottom >= 0;
+    }
+
+    // Función para mostrar los elementos y animar los contadores
+    function mostrarElementos() {
+      animatedTextElements.forEach((element) => {
+        if (isElementInViewport(element) && !element.classList.contains("contado")) {
+          element.classList.add("visible", "contado"); // Añadimos "contado" para evitar reinicios
+
+          // Si el elemento tiene un contador, iniciar el conteo
+          if (element.classList.contains("contador")) {
+            const numeroFinal = parseInt(element.getAttribute("data-numero"));
+            let duracion;
+
+            // Asignar la duración en milisegundos
+            if (numeroFinal === 120000) {
+              duracion = 1000; // Tiempo para 120000
+            } else if (numeroFinal === 60 || numeroFinal === 30) {
+              duracion = 4500; // Mismo tiempo para 60 y 30
+            }
+
+            contarNumero(element, numeroFinal, duracion);
+          }
+        }
+      });
+    }
+
+    // Escuchar el evento scroll y ejecutar la función
+    window.addEventListener("scroll", mostrarElementos);
+    mostrarElementos(); // Ejecuta la función por si los elementos ya están en el viewport al cargar
+  });
+
+
+
+  if (/Mobi|Android|Tablet|iPad|iPhone/i.test(navigator.userAgent)) {
+    alert('En estos momentos no es posible ver la pagina web de manera correcta. Estamos trabajando en ello. Para solucionarlo, debe ver si su navegador es compatible con "Vista escritorio" o entrar en la pagina web desde un dispositivo tablet o PC/portatil y en horizontal');
+  }
+
+  window.onload = function () {
+    alert("Aviso: La página web está en proceso");
+  };
+
+
+
+
+
+
+</script>
+
+
+</html>
