@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale1.0">
   <meta property="og:locale" content="es_ES" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Academista &#8212; Aprende todo tipo de cosas" />
@@ -11,247 +11,12 @@
     content="¿Te gustaria aprender o enseñar algo? ¡Entonces esta es el sitio indicado para tipo!" />
   <meta property="og:url" content="academista" />
   <meta property="og:site_name" content="Academista" />
-  <link rel="shortcut icon" href="logodibujado.png">
-  <title>Foro | Academista</title>
+  <link rel="shortcut icon" href="./img/logo.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Inicio | Academista</title>
+
   <style>
-    /* Estilos para el botón de menú */
-    .menu-btn {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 30px;
-      height: 20px;
-      cursor: pointer;
-      margin-top: 40px;
-      margin-left: 20px;
-      margin-right: 20px;
-      margin-bottom: 20px;
-    }
 
-    .menu-btn div {
-      width: 100%;
-      height: 3px;
-      background-color: #333;
-      /* Color de las rayas */
-    }
-
-    /* Estilos para el menú desplegable */
-    .menu {
-      display: none;
-      position: absolute;
-      top: 50px;
-      /* Ajusta la posición vertical del menú */
-      left: 60px;
-      /* Ajusta la posición horizontal del menú */
-      background-color: rgb(255, 255, 255);
-      /* Color de fondo del menú */
-      padding: 10px;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      border-color: #000;
-    }
-
-    .menu.active {
-      display: block;
-    }
-
-    /* Estilos para los enlaces del menú */
-    .menu a {
-      display: block;
-      padding: 30px;
-      text-decoration: none;
-      color: #333;
-      /* Color del texto de los enlaces */
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      margin: 0;
-      padding: 0;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    p {
-      margin: 0;
-    }
-
-    .container {
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 20px;
-      text-align: center;
-    }
-
-    .option {
-      display: inline-block;
-      margin: 20px;
-      padding: 20px;
-      border-radius: 20px;
-      text-decoration: none;
-      color: #ffffff;
-      font-size: 20px;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .option img {
-      width: 100%;
-      height: auto;
-      border-radius: 20px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .option:hover img {
-      opacity: 0.8;
-    }
-
-    .option-text {
-      position: relative;
-      z-index: 1;
-      background-color: #ffffffb4;
-    }
-
-    .option-text1 {
-      position: relative;
-      z-index: 1;
-    }
-
-    .option-text2 {
-      position: relative;
-      z-index: 1;
-    }
-
-    .otro {
-      background-color: #a6ff90;
-    }
-
-    .option:hover {
-      transform: scale(1.1);
-    }
-
-    .divfinaldepagina {
-      background-color: #000000;
-      display: flex;
-      align-items: left;
-    }
-
-    .verticaldiv {
-      height: auto;
-      width: 150px;
-      color: white;
-    }
-
-    /* Estilo del botón */
-    .dropbtn {
-      background-color: #3498db;
-      color: white;
-      padding: 16px;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-    }
-
-    /* Contenedor del desplegable */
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    /* Contenido del desplegable (oculto por defecto) */
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-    }
-
-    /* Enlaces del desplegable */
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-
-    /* Cambiar color de fondo en hover */
-    .dropdown-content a:hover {
-      background-color: #f1f1f1;
-    }
-
-    /* Mostrar el desplegable cuando se hace clic en el botón */
-    .dropdown.show {
-      display: block;
-    }
-
-    .barra-de-arriba {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .logoinicial {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      margin: 0;
-      padding: 0;
-      justify-content: left;
-      align-items: left;
-    }
-
-    .form-container {
-      max-width: 400px;
-      margin: 20px auto;
-      background-color: #f7f7f7;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      font-weight: bold;
-      color: #000000;
-      /* Color blanco */
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-sizing: border-box;
-    }
-
-    .button-container {
-      text-align: center;
-      margin-top: 50px;
-    }
-
-    .btn-primary {
-      background-color: #007bff;
-      color: #ffffff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .btn-primary:hover {
-      background-color: #0056b3;
-    }
-      
   </style>
 
 
@@ -262,69 +27,64 @@
 </head>
 
 <body>
-  <div class="barra-de-arriba">
-    <div>
-      <!-- Botón de menú -->
-      <div class="menu-btn" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
+
+
+
+  <div class="barra">
+    <a href="#" style="color: white; text-decoration: none;">
+      <div class="barra-izquierda">
+        <p>‎‎ ‎</p>
+        <img src="./img/logo.png" draggable="false">
+        <p class="nombrebarra">Academista</p>
       </div>
-      <!-- Menú desplegable -->
-      <div class="menu" id="myMenu">
+    </a>
 
-        <div class="container">
-          <a><b><i><u>Academista</u></i></b></a>
-          <a href="index">Inicio</a>
-        </div>
-      </div>
-
-    </div>
-    <div class="logoinicial">
-      <p align="left">
-
-        <a href="index" class="logoinicial">
-          <img src="./img/logo incial.png" draggable="false">
-        </a>
-        <a href="index" class="option ciencia">
-          <img src="./img/IMG_0241.jpg" alt="Ciencia" draggable="false">
-          <span class="option-text"></span>
-        </a>
-      </p>
-    </div>
-    <div>
-      <!--Poner inicio de sesion a la derecha-->
-      <p align="right">
-        <a href="login" class="option otro">
-          <span class="option-text2">Iniciar sesion</span>
-        </a>
-      </p>
+    <div class="barra-derecha">
+      <a href="#acercade">Acerca de</a>
+      <a href="#planes">Planes</a>
+      <a href="#contacto">Contacto</a>
+      <a href="foro">Foro</a>
+      <a href="login" style="margin-right: 20px;">Iniciar Sesión</a>
     </div>
   </div>
+
+
+
+
+
   <center>
 
+
+    <div class="fondobannerinicio">
+      <a href="#qqah" class="option empezarboton">
+        <span class="option-botonempezar">
+          Empezar
+        </span>
+      </a>
     </div>
 
-    <div class="container">
-      <h1>Foro Academista</h1>
-      <h3>Para preguntar o responder preguntas, pulse en el icono del cuadrado con la flecha situado en la esquina
-        superior derecha 🡶</h3>
-      <div class="padlet-embed"
-        style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4">
-        <p style="padding:0;margin:0"><iframe src="https://padlet.com/embed/t97d6s02jhidvusk" frameborder="0"
-            style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe></p>
-        <div style="display:flex;align-items:center;justify-content:end;margin:0;height:28px"><a
-            href="https://padlet.com?ref=embed"
-            style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" target="_blank"></a>
+
+
+    <div class="foro">
+      <div class="forotitle">
+        <font color="3e86f0" style="font-family: Arial, Helvetica, sans-serif; font-size: 55px;">
+          ¿Que es Academista?
+        </font>
+      </div>
+      <div class="padletforo">
+        <div class="padlet-embed"
+          style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4">
+          <p style="padding:0;margin:0"><iframe src="https://padlet.com/embed/gdi9fx7y3p621nv5" frameborder="0"
+              style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe></p>
         </div>
       </div>
-
     </div>
 
 
-    <div class="linea-negra"></div>
+
+
     <div class="divfinaldepagina">
-      <img src="./img/a-by-im.png" draggable="false" style="width: 30%;">
+      <img src="./img/a-by-im.png" draggable="false" style="width: 30%; min-width: 300px;">
 
       <div class="verticaldiv">
         <h4
@@ -332,7 +92,7 @@
           <font color="5b5b5b">Acerca de</font>
         </h4>
 
-        <a href="acerca-de">
+        <a href="#acercade">
           <p style="margin-left: 20px; margin-bottom: 3px;">
             <font color="white">Sobre academista</font>
           </p>
@@ -340,11 +100,6 @@
         <a href="https://www.indifferentminds.org" target="_blank">
           <p style="margin-left: 20px; margin-bottom: 3px;">
             <font color="white">Indifferent minds</font>
-          </p>
-        </a>
-        <a href="contacto">
-          <p style="margin-left: 20px;">
-            <font color="white">Contacto</font>
           </p>
         </a>
 
@@ -380,13 +135,13 @@
       </div>
 
 
+      <div class="contactofinal" id="contacto">
+        <p style="margin-top: 20px; font-size: 25px; margin-bottom: 10px;">Contacto</p>
+        Contactanos a traves del mail: <a href="academista@indifferentminds.org"
+          style="text-decoration: none; color: rgb(255, 207, 207);">academista@indifferentminds.org</a>
+      </div>
     </div>
-
 </body>
-
-
-
-
 
 
 
@@ -394,42 +149,9 @@
 <script>
 
 
-  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    window.location.href = "./versionmovil/foro";
-  }
 
-
-  function toggleMenu() {
-    const menu = document.getElementById('myMenu');
-    menu.classList.toggle('active');
-  }
-  function toggleDropdown() {
-    var dropdown = document.getElementById("myDropdown");
-    dropdown.classList.toggle("show");
-  }
-  function mostrarContenido(id) {
-    var contenido = document.getElementById(id);
-    if (contenido.style.display === "none") {
-      contenido.style.display = "block";
-    } else {
-      contenido.style.display = "none";
-    }
-  }
-
-
-
-  //BotonNewsletterMensaje
-  document.getElementById("enviarBtn").addEventListener("click", function () {
-    document.getElementById("mensajeEnviado").style.display = "block";
-    setTimeout(function () {
-      document.getElementById("mensajeEnviado").style.display = "none";
-    }, 2000); // Ocultar el mensaje después de 2 segundos (2000 milisegundos)
-  });
 
 </script>
-
-<script src="script.js"></script>
-
 
 
 </html>
