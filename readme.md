@@ -1,5 +1,5 @@
 # Academista
 Bienvenidos a la web de academista
 
-## Como ha sido creado
+## Creacion
 Academista ha sido creado en lenguajes sencillos: HTML, CSS & JS
