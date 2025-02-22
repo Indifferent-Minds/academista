@@ -75,10 +75,11 @@ p {
 }
 
 .container {
-  background-color: #ffffff;
+  background-color: #F5F8FF;
   padding: 20px;
   border-radius: 20px;
   text-align: center;
+  margin-bottom: -20px;
 }
 
 .planescontainer {
@@ -266,4 +267,9 @@ p {
   background-color: #000000;
   display: flex;
   align-items: left;
+}
+
+.chooseit {
+  font-size: 30px;
+  margin-top: 10px;
 }
