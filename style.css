@@ -273,3 +273,18 @@ p {
   font-size: 30px;
   margin-top: 10px;
 }
+
+/* Animación: Crecer desde pequeño a tamaño normal */
+@keyframes animaciones-crecer {
+  from {
+      transform: scale(0.9);
+      opacity: 0;
+  }
+  to {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+.animaciones-crecer {
+  animation: animaciones-crecer 0.5s ease-out forwards;
+}
