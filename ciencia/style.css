@@ -62,7 +62,6 @@
 
 .fondobannerinicio {
     background-image: url(./img/banner.jpg);
-    height: 610px;
     background-size: cover;
     background-position: center;
     justify-content: center;
@@ -122,4 +121,36 @@ body {
     display: flex;
     align-items: left;
 
+}
+
+.videolist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px;
+}
+
+.video {
+    transition: transform 0.3s ease-in-out;
+}
+
+.video:hover {
+    transform: scale(1.04);
+}
+
+@media (max-width: 768px) {
+    .verticaldiv, .contactofinal {
+        display: none;
+    }
+    .a-by-im {
+        width: 1000px;
+    }
+    .barra-derecha {
+        display: none;
+    }
+
+}
+
+.a-by-im{
+    width: 412px;
 }

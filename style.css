@@ -109,6 +109,7 @@ p {
   border: 2px solid black;
 }
 
+
 .libreria1 {
   background-color: aqua;
 }
@@ -287,4 +288,32 @@ p {
 }
 .animaciones-crecer {
   animation: animaciones-crecer 0.5s ease-out forwards;
+}
+
+.planesanimation:hover {
+  transform: translateY(-10px, -10px);
+}
+
+@media (max-width: 768px) {
+  .verticaldiv, .contactofinal {
+      display: none;
+  }
+  .a-by-im {
+      width: 1000px;
+  }
+  .barra-derecha {
+      display: none;
+  }
+
+}
+
+.a-by-im{
+  width: 412px;
+}
+
+
+
+
+.search {
+  font-size: 20px;
 }

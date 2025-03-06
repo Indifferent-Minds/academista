@@ -14,6 +14,7 @@
   <link rel="shortcut icon" href="./img/logo.png">
   <link rel="stylesheet" href="style.css">
   <title>Ciencia | Academista</title>
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
 
   <style>
 
@@ -56,22 +57,139 @@
 
 
     <div class="fondobannerinicio">
-      <a href="#qqah" class="option empezarboton">
-        <span class="option-botonempezar">
-          Empezar
-        </span>
-      </a>
+      <center>
+        <p style="margin-top: 100px; font-size: 70px;">Ciencia</p>
+        <p style="font-size: 20px; margin-top: -30px;">Selecciona el video que deseas ver</p>
+      </center>
+    </div>
+
+    <div class="search">
+      <label for="orden" style="font-size: 20px;">Ordenar por:</label>
+    <select id="orden" onchange="ordenarEnlaces()" class="orden">
+        <option value="reciente" style="font-size: 15px;">Más reciente</option>
+        <option value="antiguo" style="font-size: 15px;">Más antiguo</option>
+    </select>
+    
+    
+    <script>
+        function ordenarEnlaces() {
+            const orden = document.getElementById("orden").value;
+            const contenedor = document.getElementById("enlaces");
+            const enlaces = Array.from(contenedor.getElementsByTagName("a"));
+            
+            enlaces.sort((a, b) => {
+                return orden === "antiguo" ? a.id - b.id : b.id - a.id;
+            });
+            
+            contenedor.innerHTML = "";
+            enlaces.forEach(enlace => contenedor.appendChild(enlace));
+        }
+    </script>
     </div>
 
 
   </center>
-  
+
+
+  <div class="videolist" id="enlaces">
+    <a href="/a2y3f" id="1">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="2">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="3">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="4">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="5">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="6">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="7">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="8">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="9">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="10">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="11">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="12">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="13">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="14">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="15">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="16">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="17">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="18">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+
+  </div>
 
 
 
 
   <div class="divfinaldepagina">
-    <img src="./img/a-by-im.png" draggable="false" style="width: 30%; min-width: 300px;">
+    <img src="./img/a-by-im.png" draggable="false" class="a-by-im">
 
     <div class="verticaldiv">
       <h4
@@ -92,7 +210,7 @@
 
 
 
-    </div>
+    </d300
 
     <div style="margin-right: 20px;"></div>
 
@@ -124,7 +242,8 @@
 
     <div class="contactofinal" id="contacto">
       <p style="margin-top: 20px; font-size: 25px; margin-bottom: 10px;">Contacto</p>
-      Contactanos a traves del mail: <a href="academista@indifferentminds.org" style="text-decoration: none; color: rgb(255, 207, 207);">academista@indifferentminds.org</a>
+      Contactanos a traves del mail: <a href="academista@indifferentminds.org"
+        style="text-decoration: none; color: rgb(255, 207, 207);">academista@indifferentminds.org</a>
     </div>
   </div>
 </body>
