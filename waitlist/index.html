@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de espera | Academista</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/logo.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./img/logo.png">
+
+  <style>
+    /* Base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at center, #1E40AF, #000000);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Background pattern */
+    .bg-pattern {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 20px 20px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Main content */
+    .content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 36rem;
+      /* 576px */
+      margin: 0 auto;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100vh;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Typography */
+    h2 {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(to bottom right, rgb(229, 231, 235), rgb(107, 114, 128));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    @media (min-width: 640px) {
+      h2 {
+        font-size: 3rem;
+        line-height: 1;
+      }
+    }
+
+    p {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      margin-bottom: 2rem;
+      color: rgb(209, 213, 219);
+    }
+
+    @media (min-width: 640px) {
+      p {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+    }
+
+    /* Form */
+    .form-container {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      display: flex;
+      overflow: hidden;
+      border-radius: 0.75rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 0.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .form-group:focus-within {
+      border: 2px solid #3b82f6;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      border: 0;
+      background-color: transparent;
+      color: white;
+      padding: 0.75rem;
+      outline: none;
+    }
+
+    input[type="email"]::placeholder {
+      color: rgb(156, 163, 175);
+    }
+
+    button {
+      background-color: black;
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      border: none;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      width: 120px;
+    }
+
+    button:hover {
+      background-color: rgb(31, 41, 55);
+    }
+
+    button:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    /* Avatars */
+    .avatar-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .avatars {
+      display: flex;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+
+    .avatar {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+
+    .avatar:nth-child(1) {
+      background-color: rgb(124, 58, 237);
+      z-index: 3;
+    }
+
+    .avatar:nth-child(2) {
+      background-color: rgb(37, 99, 235);
+      margin-left: -0.5rem;
+      z-index: 2;
+    }
+
+    .avatar:nth-child(3) {
+      background-color: rgb(29, 78, 216);
+      margin-left: -0.5rem;
+      z-index: 1;
+    }
+
+    .waitlist-count {
+      color: white;
+      font-weight: 600;
+    }
+
+    /* Social icons */
+    .social-icons {
+      padding-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .social-icon {
+      color: rgb(156, 163, 175);
+      transition: all 0.3s ease-in-out;
+      transform: scale(1);
+    }
+
+    .social-icon:hover {
+      color: white;
+      transform: scale(1.1);
+    }
+
+    .social-icon svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    /* Toast notification */
+    .toast-container {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 100;
+    }
+
+    .toast {
+      background-color: rgb(23, 23, 23);
+      color: white;
+      border: 1px solid rgb(63, 63, 70);
+      border-radius: 0.75rem;
+      padding: 1rem;
+      margin-top: 0.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      max-width: 24rem;
+      display: flex;
+      flex-direction: column;
+      animation: slideIn 0.3s ease-out forwards;
+    }
+
+    .toast.success .toast-title {
+      color: #10B981;
+    }
+
+    .toast.error .toast-title {
+      color: #EF4444;
+    }
+
+    .toast-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .toast-description {
+      font-size: 0.875rem;
+      opacity: 0.9;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideOut {
+      from {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      to {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+    }
+
+    .toast.hide {
+      animation: slideOut 0.3s ease-in forwards;
+    }
+
+    /* Loader */
+    .loader {
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top: 2px solid white;
+      width: 1.25rem;
+      height: 1.25rem;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Ajuste adicional para el espaciado */
+    .waitlist-info {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-pattern"></div>
+  <div class="content">
+    <div class="container">
+      <div class="main-content">
+        <div>
+          <h2>Unete a la lista de espera</h2>
+        </div>
+        <div>
+          <p>Forma parte de algo <font color="white">verdaderamente extraordinario</font>. Únete a miles de personas que ya están obteniendo <font color="white">acceso
+            anticipado a Academista</font>, la plataforma donde personas con <font color="white">altas capacidades intelectuales</font> comparten su
+            <font color="white">talento</font> a través de <font color="white">videos explicativos y libros</font></p>
+        </div>
+        <div class="form-container">
+          <form id="waitlistForm" class="space-y-4">
+            <div class="form-group">
+              <input id="email" name="email" type="email" placeholder="Introduce tu correo electrónico" required
+                aria-describedby="email-error" />
+              <button type="submit" id="submitButton">Unirse</button>
+            </div>
+          </form>
+        </div>
+        <div class="waitlist-info">
+          <div class="avatar-container">
+            <p class="waitlist-count"><span id="waitlistCount">10</span>+ people on the waitlist</p>
+            <div class="avatars">
+              <div class="avatar">JE</div>
+              <div class="avatar">DM</div>
+              <div class="avatar">PQ</div>
+            </div>
+            <img src="./img/a-by-im1.png" style="width: 450px;">
+          </div>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="https://x.com/academista" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)"
+          class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em">
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+        </a>
+        <a href="https://instagram.com/academista" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+          class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em">
+            <path
+              d="M20.947 8.305a6.53 6.53 0 00-.419-2.216 4.61 4.61 0 00-2.633-2.633 6.606 6.606 0 00-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 00-2.185.42 4.607 4.607 0 00-2.633 2.633 6.554 6.554 0 00-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 002.634 2.632 6.584 6.584 0 002.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 002.186-.419 4.615 4.615 0 002.633-2.633c.263-.7.404-1.438.419-2.187.043-.962.056-1.267.056-3.71-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 010 9.246zm4.807-8.339a1.077 1.077 0 01-1.078-1.078 1.077 1.077 0 112.155 0c0 .596-.482 1.078-1.077 1.078z" />
+            <circle cx="11.994" cy="11.979" r="3.003" />
+          </svg>
+        </a>
+        <a href="mailto:academista@indifferentminds.org" aria-label="Email" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em">
+            <path
+              d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+          </svg>
+        </a>
+        <a href="https://facebook.com/academista" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+          class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em">
+            <path
+              d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0014.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z" />
+          </svg>
+        </a>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script>
+    // Initialize waitlist count
+    let waitlistCount = 100;
+    const waitlistCountElement = document.getElementById('waitlistCount');
+
+    // Form submission
+    const form = document.getElementById('waitlistForm');
+    const emailInput = document.getElementById('email');
+    const submitButton = document.getElementById('submitButton');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const email = emailInput.value.trim();
+
+      if (!email) {
+        showToast('Error', 'Email is required', 'error');
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        showToast('Error', 'Invalid email address', 'error');
+        return;
+      }
+
+      // Show loading state
+      submitButton.disabled = true;
+      submitButton.innerHTML = '<div class="loader"></div>';
+
+      // Simulate API call
+
+
+      setTimeout(() => {
+
+        waitlistCount += 1;
+        waitlistCountElement.textContent = waitlistCount;
+
+
+        emailInput.value = '';
+
+
+        submitButton.disabled = false;
+        submitButton.textContent = 'Get Notified';
+
+
+        showToast('Error!', 'La pagina web no acepta solicitudes de unión a la lista de espera hasta activacion. Sentimos las molestias ', 'success');
+        // showToast('Success!', 'You have been added to the waitlist! Check your email for confirmation.', 'success');
+      }, 1500);
+    });
+
+    // Email validation
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+
+    // Toast notification system
+    function showToast(title, message, type = 'success') {
+      const toastContainer = document.getElementById('toastContainer');
+
+      // Create toast element
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+
+      // Create toast content
+      toast.innerHTML = `
+        <div class="toast-title">${title}</div>
+        <div class="toast-description">${message}</div>
+      `;
+
+      // Add toast to container
+      toastContainer.appendChild(toast);
+
+      // Remove toast after 5 seconds
+      setTimeout(() => {
+        toast.classList.add('hide');
+        setTimeout(() => {
+          toastContainer.removeChild(toast);
+        }, 300);
+      }, 5000);
+    }
+  </script>
+</body>
+
+</html>
