@@ -395,99 +395,80 @@
 
   <div class="toast-container" id="toastContainer"></div>
 
-  <script>
-    // Initialize Firebase
-    const firebaseConfig = {
-      apiKey: "AIzaSyCRUEsrcEl7BvTpepXBSe5EmnkX6w32uoE",
-      authDomain: "academista-5045f.firebaseapp.com",
-      projectId: "academista-5045f",
-      storageBucket: "academista-5045f.firebasestorage.app",
-      messagingSenderId: "896281673506",
-      appId: "1:896281673506:web:cdc43d1ee227eac0a96f7b",
-      measurementId: "G-YM08XY8X6R"
-    };
 
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
-  const app = firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore(app);
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("JmjLM_aK8316jP8JK"); // Reemplaza con tu clave pública real de EmailJS
 
-  let waitlistCount = 100;
-  const waitlistCountElement = document.getElementById('waitlistCount');
+    let waitlistCount = 10;
+    const waitlistCountElement = document.getElementById('waitlistCount');
+    const form = document.getElementById('waitlistForm');
+    const emailInput = document.getElementById('email');
+    const submitButton = document.getElementById('submitButton');
+    const toastContainer = document.getElementById('toastContainer');
 
-  const form = document.getElementById('waitlistForm');
-  const emailInput = document.getElementById('email');
-  const submitButton = document.getElementById('submitButton');
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const email = emailInput.value.trim();
-
-    if (!email) {
-      showToast('Error', 'Email is required', 'error');
-      return;
+    function showToast(title, description, type) {
+      const toast = document.createElement('div');
+      toast.classList.add('toast', type);
+      toast.innerHTML = `<div class="toast-title">${title}</div><div class="toast-description">${description}</div>`;
+      toastContainer.appendChild(toast);
+      setTimeout(() => {
+        toast.classList.add('hide');
+      }, 3000);
     }
 
-    if (!isValidEmail(email)) {
-      showToast('Error', 'Invalid email address', 'error');
-      return;
+    function isValidEmail(email) {
+      const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      return regex.test(email);
     }
 
-    submitButton.disabled = true;
-    submitButton.innerHTML = '<div class="loader"></div>';
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const email = emailInput.value.trim();
 
-    db.collection('waitlist').add({
-      email: email,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    })
-    .then(() => {
-      waitlistCount += 1;
-      waitlistCountElement.innerText = waitlistCount;
+      if (!email) {
+        showToast('Error', 'Email is required', 'error');
+        return;
+      }
 
-      showToast('Success', 'You have been added to the waitlist!', 'success');
+      if (!isValidEmail(email)) {
+        showToast('Error', 'Invalid email address', 'error');
+        return;
+      }
 
-      form.reset();
-      submitButton.disabled = false;
-      submitButton.innerHTML = 'Unirse';
-    })
-    .catch((error) => {
-      console.error('Error al agregar documento: ', error);
-      showToast('Error', 'There was a problem adding your email to the list', 'error');
-      submitButton.disabled = false;
-      submitButton.innerHTML = 'Unirse';
+      submitButton.disabled = true;
+      submitButton.innerHTML = '<div class="loader"></div>';
+
+      // Enviar correo usando EmailJS con los datos correctos
+      const emailData = {
+        from_email: email
+      };
+
+      emailjs.send('service_umzp7av', 'template_o40pqtq', emailData)
+        .then((response) => {
+          console.log('Correo enviado correctamente:', response);
+          waitlistCount += 1;
+          waitlistCountElement.textContent = waitlistCount;
+          emailInput.value = '';
+          submitButton.disabled = false;
+          submitButton.textContent = 'Unirse';
+          showToast('Success!', 'You have been added to the waitlist!', 'success');
+        })
+        .catch((error) => {
+          console.error('Error al enviar el correo:', error);
+          showToast('Error', 'There was an issue sending the email. Please try again.', 'error');
+          submitButton.disabled = false;
+          submitButton.textContent = 'Unirse';
+        });
     });
   });
+</script>
 
-  function isValidEmail(email) {
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    return emailRegex.test(email);
-  }
 
-  function showToast(title, description, type) {
-    const toastContainer = document.getElementById('toastContainer');
-    const toast = document.createElement('div');
-    toast.classList.add('toast', type);
 
-    const toastTitle = document.createElement('div');
-    toastTitle.classList.add('toast-title');
-    toastTitle.innerText = title;
 
-    const toastDescription = document.createElement('div');
-    toastDescription.classList.add('toast-description');
-    toastDescription.innerText = description;
-
-    toast.appendChild(toastTitle);
-    toast.appendChild(toastDescription);
-    toastContainer.appendChild(toast);
-
-    setTimeout(() => {
-      toast.classList.add('hide');
-      setTimeout(() => {
-        toast.remove();
-      }, 300);
-    }, 5000);
-  }
-  </script>
 </body>
 
 </html>
