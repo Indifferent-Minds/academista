@@ -10,7 +10,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./img/logo.png">
 
   <style>
-    /* Base styles */
     * {
       margin: 0;
       padding: 0;
@@ -28,7 +27,6 @@
       position: relative;
     }
 
-    /* Background pattern */
     .bg-pattern {
       position: fixed;
       top: 0;
@@ -43,7 +41,6 @@
       z-index: 1;
     }
 
-    /* Main content */
     .content {
       position: relative;
       z-index: 2;
@@ -53,7 +50,6 @@
     .container {
       width: 100%;
       max-width: 36rem;
-      /* 576px */
       margin: 0 auto;
       padding: 2rem;
       display: flex;
@@ -71,7 +67,6 @@
       text-align: center;
     }
 
-    /* Typography */
     h2 {
       font-size: 2.25rem;
       line-height: 2.5rem;
@@ -104,7 +99,6 @@
       }
     }
 
-    /* Form */
     .form-container {
       width: 100%;
       margin-bottom: 2rem;
@@ -157,7 +151,6 @@
       cursor: not-allowed;
     }
 
-    /* Avatars */
     .avatar-container {
       display: flex;
       flex-direction: column;
@@ -208,7 +201,6 @@
       font-weight: 600;
     }
 
-    /* Social icons */
     .social-icons {
       padding-top: 2rem;
       display: flex;
@@ -232,7 +224,6 @@
       height: 1.5rem;
     }
 
-    /* Toast notification */
     .toast-container {
       position: fixed;
       bottom: 1rem;
@@ -301,7 +292,6 @@
       animation: slideOut 0.3s ease-in forwards;
     }
 
-    /* Loader */
     .loader {
       border: 2px solid rgba(255, 255, 255, 0.3);
       border-radius: 50%;
@@ -322,7 +312,6 @@
       }
     }
 
-    /* Ajuste adicional para el espaciado */
     .waitlist-info {
       margin-top: 2rem;
       margin-bottom: 2rem;
@@ -402,11 +391,9 @@
   <div class="toast-container" id="toastContainer"></div>
 
   <script>
-    // Initialize waitlist count
     let waitlistCount = 100;
     const waitlistCountElement = document.getElementById('waitlistCount');
 
-    // Form submission
     const form = document.getElementById('waitlistForm');
     const emailInput = document.getElementById('email');
     const submitButton = document.getElementById('submitButton');
@@ -426,11 +413,9 @@
         return;
       }
 
-      // Show loading state
       submitButton.disabled = true;
       submitButton.innerHTML = '<div class="loader"></div>';
 
-      // Simulate API call
 
 
       setTimeout(() => {
@@ -451,30 +436,24 @@
       }, 1500);
     });
 
-    // Email validation
     function isValidEmail(email) {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return emailRegex.test(email);
     }
 
-    // Toast notification system
     function showToast(title, message, type = 'success') {
       const toastContainer = document.getElementById('toastContainer');
 
-      // Create toast element
       const toast = document.createElement('div');
       toast.className = `toast ${type}`;
 
-      // Create toast content
       toast.innerHTML = `
         <div class="toast-title">${title}</div>
         <div class="toast-description">${message}</div>
       `;
 
-      // Add toast to container
       toastContainer.appendChild(toast);
 
-      // Remove toast after 5 seconds
       setTimeout(() => {
         toast.classList.add('hide');
         setTimeout(() => {
