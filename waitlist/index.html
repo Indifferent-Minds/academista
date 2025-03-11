@@ -8,6 +8,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./img/logo.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./img/logo.png">
   <link rel="apple-touch-icon" sizes="180x180" href="./img/logo.png">
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
 
   <style>
     * {
@@ -328,9 +330,12 @@
           <h2>Unete a la lista de espera</h2>
         </div>
         <div>
-          <p>Forma parte de algo <font color="white">verdaderamente extraordinario</font>. Únete a miles de personas que ya están obteniendo <font color="white">acceso
-            anticipado a Academista</font>, la plataforma donde personas con <font color="white">altas capacidades intelectuales</font> comparten su
-            <font color="white">talento</font> a través de <font color="white">videos explicativos y libros</font></p>
+          <p>Forma parte de algo <font color="white">verdaderamente extraordinario</font>. Únete a miles de personas que
+            ya están obteniendo <font color="white">acceso
+              anticipado a Academista</font>, la plataforma donde personas con <font color="white">altas capacidades
+              intelectuales</font> comparten su
+            <font color="white">talento</font> a través de <font color="white">videos explicativos y libros</font>
+          </p>
         </div>
         <div class="form-container">
           <form id="waitlistForm" class="space-y-4">
@@ -391,76 +396,97 @@
   <div class="toast-container" id="toastContainer"></div>
 
   <script>
-    let waitlistCount = 100;
-    const waitlistCountElement = document.getElementById('waitlistCount');
-
-    const form = document.getElementById('waitlistForm');
-    const emailInput = document.getElementById('email');
-    const submitButton = document.getElementById('submitButton');
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      const email = emailInput.value.trim();
-
-      if (!email) {
-        showToast('Error', 'Email is required', 'error');
-        return;
-      }
-
-      if (!isValidEmail(email)) {
-        showToast('Error', 'Invalid email address', 'error');
-        return;
-      }
-
-      submitButton.disabled = true;
-      submitButton.innerHTML = '<div class="loader"></div>';
+    // Initialize Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyCRUEsrcEl7BvTpepXBSe5EmnkX6w32uoE",
+      authDomain: "academista-5045f.firebaseapp.com",
+      projectId: "academista-5045f",
+      storageBucket: "academista-5045f.firebasestorage.app",
+      messagingSenderId: "896281673506",
+      appId: "1:896281673506:web:cdc43d1ee227eac0a96f7b",
+      measurementId: "G-YM08XY8X6R"
+    };
 
 
+  const app = firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore(app);
 
-      setTimeout(() => {
+  let waitlistCount = 100;
+  const waitlistCountElement = document.getElementById('waitlistCount');
 
-        waitlistCount += 1;
-        waitlistCountElement.textContent = waitlistCount;
+  const form = document.getElementById('waitlistForm');
+  const emailInput = document.getElementById('email');
+  const submitButton = document.getElementById('submitButton');
 
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-        emailInput.value = '';
+    const email = emailInput.value.trim();
 
+    if (!email) {
+      showToast('Error', 'Email is required', 'error');
+      return;
+    }
 
-        submitButton.disabled = false;
-        submitButton.textContent = 'Get Notified';
+    if (!isValidEmail(email)) {
+      showToast('Error', 'Invalid email address', 'error');
+      return;
+    }
 
+    submitButton.disabled = true;
+    submitButton.innerHTML = '<div class="loader"></div>';
 
-        showToast('Error!', 'La pagina web no acepta solicitudes de unión a la lista de espera hasta activacion. Sentimos las molestias ', 'success');
-        // showToast('Success!', 'You have been added to the waitlist! Check your email for confirmation.', 'success');
-      }, 1500);
+    db.collection('waitlist').add({
+      email: email,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    })
+    .then(() => {
+      waitlistCount += 1;
+      waitlistCountElement.innerText = waitlistCount;
+
+      showToast('Success', 'You have been added to the waitlist!', 'success');
+
+      form.reset();
+      submitButton.disabled = false;
+      submitButton.innerHTML = 'Unirse';
+    })
+    .catch((error) => {
+      console.error('Error al agregar documento: ', error);
+      showToast('Error', 'There was a problem adding your email to the list', 'error');
+      submitButton.disabled = false;
+      submitButton.innerHTML = 'Unirse';
     });
+  });
 
-    function isValidEmail(email) {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return emailRegex.test(email);
-    }
+  function isValidEmail(email) {
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return emailRegex.test(email);
+  }
 
-    function showToast(title, message, type = 'success') {
-      const toastContainer = document.getElementById('toastContainer');
+  function showToast(title, description, type) {
+    const toastContainer = document.getElementById('toastContainer');
+    const toast = document.createElement('div');
+    toast.classList.add('toast', type);
 
-      const toast = document.createElement('div');
-      toast.className = `toast ${type}`;
+    const toastTitle = document.createElement('div');
+    toastTitle.classList.add('toast-title');
+    toastTitle.innerText = title;
 
-      toast.innerHTML = `
-        <div class="toast-title">${title}</div>
-        <div class="toast-description">${message}</div>
-      `;
+    const toastDescription = document.createElement('div');
+    toastDescription.classList.add('toast-description');
+    toastDescription.innerText = description;
 
-      toastContainer.appendChild(toast);
+    toast.appendChild(toastTitle);
+    toast.appendChild(toastDescription);
+    toastContainer.appendChild(toast);
 
+    setTimeout(() => {
+      toast.classList.add('hide');
       setTimeout(() => {
-        toast.classList.add('hide');
-        setTimeout(() => {
-          toastContainer.removeChild(toast);
-        }, 300);
-      }, 5000);
-    }
+        toast.remove();
+      }, 300);
+    }, 5000);
+  }
   </script>
 </body>
 
