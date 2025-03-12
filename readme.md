@@ -37,6 +37,10 @@ academista/
     ├── style.css               # Estilos de la página de otro contenido
     ├── index.html              # Página de otro contenido
     └── img/                    # Imagenes
+├── waitlist/                 # Lista de espera
+    ├── style.css               # Estilos de la página de otro contenido
+    ├── index.html              # Página de otro contenido
+    └── img/                    # Imagenes
   ├── index.html              # Página principal
   ├── style.css               # Estilos de la página principal
   ├── readme.md               # Información del proyecto 
