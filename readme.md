@@ -2,7 +2,7 @@
 Bienvenidos a la web de academista
 
 ## Creacion
-Academista ha sido creado en lenguajes sencillos: HTML, CSS & JS
+Academista ha sido creado en los lenguajes de programacion HTML, CSS y JS
 
 ## Estructura
 ```plaintext
