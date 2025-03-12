@@ -46,3 +46,6 @@ academista/
   ├── readme.md               # Información del proyecto 
   └── arial.ttf               # Tipografía
 ```
+
+##
+Developed by Indifferent Minds Team
