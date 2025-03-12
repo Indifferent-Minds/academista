@@ -2,7 +2,7 @@
 Bienvenidos a la web de academista
 
 ## Creacion
-Academista ha sido creado en lenguajes sencillos: HTML, CSS & JS
+Academista ha sido creado en los lenguajes de programacion HTML, CSS y JS
 
 ## Estructura
 ```plaintext
@@ -21,10 +21,6 @@ academista/
     ├── style.css               # Estilos de la página ciencia
     ├── index.html              # Página ciencia
     └── img/                    # Imagenes
-  ├── inprocess/              # Página de mantenimiento
-    ├── style.css               # Estilos de la página aviso mantenimiento
-    ├── index.html              # Página aviso mantenimiento
-    └── img/                    # Imagenes
   ├── letras/                 # Contenido relacionado con las letras 
     ├── style.css               # Estilos de la página letras
     ├── index.html              # Página letras
@@ -41,8 +37,15 @@ academista/
     ├── style.css               # Estilos de la página de otro contenido
     ├── index.html              # Página de otro contenido
     └── img/                    # Imagenes
+├── waitlist/                 # Lista de espera
+    ├── style.css               # Estilos de la página de otro contenido
+    ├── index.html              # Página de otro contenido
+    └── img/                    # Imagenes
   ├── index.html              # Página principal
   ├── style.css               # Estilos de la página principal
   ├── readme.md               # Información del proyecto 
   └── arial.ttf               # Tipografía
 ```
+
+##
+Developed by Indifferent Minds Team
