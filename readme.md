@@ -21,10 +21,6 @@ academista/
     ├── style.css               # Estilos de la página ciencia
     ├── index.html              # Página ciencia
     └── img/                    # Imagenes
-  ├── inprocess/              # Página de mantenimiento
-    ├── style.css               # Estilos de la página aviso mantenimiento
-    ├── index.html              # Página aviso mantenimiento
-    └── img/                    # Imagenes
   ├── letras/                 # Contenido relacionado con las letras 
     ├── style.css               # Estilos de la página letras
     ├── index.html              # Página letras
