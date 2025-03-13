@@ -4,6 +4,11 @@ Bienvenidos a la web de academista
 ## Creacion
 Academista ha sido creado en los lenguajes de programacion HTML, CSS y JS
 
+## Diseño
+Plantilla video: https://www.figma.com/design/pXUiPgJSf7o8A13ByQ5xuU/Plantilla-video?node-id=0-1&t=v5TUaY8WfbiNtJ2Q-1
+
+Final de pagina: https://www.figma.com/design/n17MuOtBi7VUute8nqIGzM/Final-de-pagina-%7C-Academista?t=v5TUaY8WfbiNtJ2Q-1
+
 ## Estructura
 ```plaintext
 academista/
