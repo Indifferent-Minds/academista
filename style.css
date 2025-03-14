@@ -85,9 +85,7 @@ p {
 }
 
 .planescontainer {
-  background-image: url('./img/IMG_0039.jpg');
-  background-size: cover;
-  background-position: center;
+  background-color: #F5F8FF;
   padding: 20px;
   border-radius: 20px;
   text-align: center;
@@ -132,6 +130,7 @@ p {
   height: 610px;
   background-size: cover;
   background-position: center;
+  background-size: container;
   justify-content: center;
   display: flex;
 }
@@ -152,7 +151,7 @@ p {
   font-size: 40px;
   font-family: Arial, 'Times New Roman', Times, serif;
   font-weight: 300;
-  background-image: url(./img/IMG_0039.jpg);
+  background-color: #F5F8FF;
   margin-bottom: -20px;
 }
 
@@ -170,7 +169,7 @@ p {
 }
 
 .contadorcontenido {
-  background-image: url(./img/IMG_0039.jpg);
+  background-color: #F5F8FF;
   border-radius: 20px;
   height: 700px;
 }
@@ -237,9 +236,7 @@ p {
 }
 
 .whatis {
-  background-image: url('./img/IMG_0039.jpg');
-  background-size: cover;
-  background-position: center;
+  background-color: #F5F8FF;
   height: 350px;
 }
 
@@ -256,9 +253,7 @@ p {
 }
 
 .choose {
-  background-image: url('./img/IMG_0039.jpg');
-  background-size: cover;
-  background-position: center;
+  background-color: #F5F8FF;
 }
 
 .contactofinal {
