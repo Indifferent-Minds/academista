@@ -92,7 +92,7 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      emailjs.init("JmjLM_aK8316jP8JK"); // Reemplaza con tu clave pública real de EmailJS
+      emailjs.init("JmjLM_aK8316jP8JK"); 
 
       let waitlistCount = 10;
       const waitlistCountElement = document.getElementById('waitlistCount');
@@ -121,19 +121,18 @@
         const email = emailInput.value.trim();
 
         if (!email) {
-          showToast('Error', 'Email is required', 'error');
+          showToast('Error', 'Introduce tu email', 'error');
           return;
         }
 
         if (!isValidEmail(email)) {
-          showToast('Error', 'Invalid email address', 'error');
+          showToast('Error', 'Correo electronico incorrecto', 'error');
           return;
         }
 
         submitButton.disabled = true;
         submitButton.innerHTML = '<div class="loader"></div>';
 
-        // Enviar correo usando EmailJS con los datos correctos
         const emailData = {
           from_email: email
         };
@@ -146,11 +145,11 @@
             emailInput.value = '';
             submitButton.disabled = false;
             submitButton.textContent = 'Unirse';
-            showToast('Success!', 'You have been added to the waitlist!', 'success');
+            showToast('Hecho!', 'Te has unido la waitlist', 'success');
           })
           .catch((error) => {
-            console.error('Error al enviar el correo:', error);
-            showToast('Error', 'There was an issue sending the email. Please try again.', 'error');
+            console.error('Error al unir a la waitlist', error);
+            showToast('Error', 'Ha habido un problema al intentar agregarte a la waitlist. Por favor, intentalo de nuevo.', 'error');
             submitButton.disabled = false;
             submitButton.textContent = 'Unirse';
           });
