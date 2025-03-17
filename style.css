@@ -270,6 +270,7 @@ p {
   background-color: #000000;
   display: flex;
   align-items: left;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .chooseit {
