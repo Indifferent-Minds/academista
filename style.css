@@ -278,7 +278,6 @@ p {
   margin-top: 10px;
 }
 
-/* Animación: Crecer desde pequeño a tamaño normal */
 @keyframes animaciones-crecer {
   from {
     transform: scale(0.9);
@@ -356,4 +355,29 @@ p {
 .social-icon svg {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+.carousel-container {
+  overflow: hidden;
+  height: 250px;
+  position: relative;
+}
+.carousel {
+  display: flex;
+  animation: scroll 40s linear infinite;
+}
+.carousel img {
+  width: 410px;
+  height: 230px;
+  object-fit: cover;
+  margin-right: 20px;
+  border-radius: 10px;
+  
+}
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-320px * 5)); }
+}
+.carousel-container:hover .carousel {
+  animation-play-state: paused;
 }
