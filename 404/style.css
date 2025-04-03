@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+.barra {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1px;
+    background-color: rgba(0, 0, 0, 0.363);
+    backdrop-filter: blur(10px);
+    color: white;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap;
+}
+
+.barra-izquierda {
+    display: flex;
+    align-items: center;
+}
+
+.barra-izquierda img {
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.barra-derecha {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.barra-derecha a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.barra-derecha a:hover {
+    color: #9ecdff;
+}
+
+.nombrebarra {
+    font-family: 'Geist Mono';
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.nombrebarra:hover {
+    color: #9ecdff;
+}
+
+.option {
+    display: inline-block;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.option:hover {
+    transform: scale(1.1);
+}
+
+.empezarboton {
+    background-color: #6ab7ffae;
+    margin-top: 520px;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.option-botonempezar {
+    position: relative;
+    z-index: 1;
+}
+
+.verticaldiv {
+    height: auto;
+    width: 150px;
+    color: white;
+}
+
+.contactofinal {
+    color: white;
+    margin-left: 60px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.divfinaldepagina {
+    background-color: #000000;
+    display: flex;
+    align-items: left;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+
+    .verticaldiv,
+    .contactofinal {
+        display: none;
+    }
+
+    .a-by-im {
+        width: 1000px;
+    }
+
+    .divfinaldepagina {
+        align-items: center;
+    }
+
+    .barra-derecha {
+        display: none;
+    }
+
+    .fondobannerinicio {
+        max-height: 400px;
+    }
+
+    .imgbanner {
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+.a-by-im {
+    width: 412px;
+}
+
+
+
+.social-icons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: left;
+    gap: 1.5rem;
+}
+
+.social-icon {
+    color: rgb(156, 163, 175);
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+}
+
+.social-icon:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+.social-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.error {
+    margin-top: 80px;
+    font-family: 'Inter';
+}
+
+.libreria1 {
+    background-color: #3E86F0;
+}
+
+@keyframes subirBajar {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+        /* Sube 10px */
+    }
+
+    100% {
+        transform: translateY(0);
+        /* Vuelve a su posición original */
+    }
+}
+
+.imagen {
+    animation: subirBajar 2s ease-in-out infinite;
+    /* 1s de duración, loop infinito */
+}
