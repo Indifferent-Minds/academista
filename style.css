@@ -267,8 +267,9 @@ p {
 }
 
 .chooseit {
-  font-size: clamp(35px, 3vw, 40px);
+  font-size: clamp(35px, 3vw, 50px);
   margin-top: 10px;
+  color: #3E86F0;
 }
 
 @keyframes animaciones-crecer {
@@ -383,4 +384,3 @@ p {
 .carousel-container:hover .carousel {
   animation-play-state: paused;
 }
-
