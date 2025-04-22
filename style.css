@@ -267,7 +267,7 @@ p {
 }
 
 .chooseit {
-  font-size: clamp(35px, 3vw, 50px);
+  font-size: clamp(35px, 3vw, 49px);
   margin-top: 10px;
   color: #3E86F0;
 }
