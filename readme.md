@@ -9,6 +9,9 @@ Plantilla video: https://www.figma.com/design/pXUiPgJSf7o8A13ByQ5xuU/Plantilla-v
 
 Final de pagina: https://www.figma.com/design/n17MuOtBi7VUute8nqIGzM/Final-de-pagina-%7C-Academista?t=v5TUaY8WfbiNtJ2Q-1
 
+Animaciones: https://lottiefiles.com/
+
+
 ## Estructura
 ```plaintext
 academista/
