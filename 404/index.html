@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="/style.css">
   <title>Página no encontrada | Academista</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
 
   <style>
 
@@ -58,14 +59,14 @@
 
 
 
+    
     <div class="error">
-      <div class="title">
-        <h2 style="font-size: clamp(30px, 3vw, 50px); color: #2674e9;">Uy</h2>
-        <h1 style="font-size: clamp(50px, 7vw, 90px); color: #3E86F0; margin-top: -30px;">Error 404</h1>
-        <h2 style="font-size: clamp(10px, 3vw, 30px); margin-top: 50px; color: #005ae2;">Página no encontrada</h2>
-      </div>
-      <img src="./img/interrogacion.svg" draggable="false" class="imagen" style="fill: #3E86F0; height: 350px;">
+      
+      <div style="height: 500px;" id="animation404"></div>
       <div class="decoracion">
+        <div class="title">
+          <h2 style="font-size: clamp(10px, 3vw, 30px); margin-top: 50px; color: #005ae2;">Página no encontrada</h2>
+        </div>
         <a href="\" class="option" id="planes">
           <span class="option-text">
             <font style="color: #005ae2; font-family: Arial, Helvetica, sans-serif;">Volver a inicio</font>
@@ -73,6 +74,16 @@
         </a>
       </div>
     </div>
+
+    <script>
+      var animacion = lottie.loadAnimation({
+        container: document.getElementById('animation404'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'animacion404.json'
+      });
+    </script>
 
 
   </center>
