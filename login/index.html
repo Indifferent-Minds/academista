@@ -12,304 +12,9 @@
   <meta property="og:url" content="academista" />
   <meta property="og:site_name" content="Academista" />
   <link rel="shortcut icon" href="./img/logo.png">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
-    @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+  <link rel="stylesheet" href="/login/style.css">
 
-    .barra {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 1px;
-      background-color: rgba(0, 0, 0, 0.563);
-      backdrop-filter: blur(10px);
-      color: white;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      flex-wrap: wrap;
-    }
-
-    .barra-izquierda {
-      display: flex;
-      align-items: center;
-      margin-top: -4px;
-    }
-
-    .barra-izquierda img {
-      height: 40px;
-      margin-right: 10px;
-      border-radius: 50%;
-    }
-
-    .barra-derecha {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 15px;
-    }
-
-    .barra-derecha a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    .barra-derecha a:hover {
-      color: #9ecdff;
-    }
-
-    .nombrebarra {
-      font-family: 'Geist Mono';
-      font-size: 20px;
-      transition: color 0.3s;
-    }
-
-    .nombrebarra:hover {
-      color: #9ecdff;
-    }
-
-
-
-
-
-    .empezarboton {
-      background-color: #6ab7ffae;
-      margin-top: 520px;
-      font-size: 25px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .vertical1div {
-      height: auto;
-      width: 150px;
-      color: white;
-    }
-
-    .contactofinal {
-      color: white;
-      margin-left: 60px;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #FFFFFF;
-      margin: 0;
-      padding: 0;
-      justify-content: center;
-      align-items: center;
-      box-sizing: border-box;
-      width: 100%;
-      overflow-x: hidden;
-    }
-
-    .divfinaldepagina {
-      background-color: #000000;
-      display: flex;
-      align-items: left;
-
-    }
-
-
-
-
-    .container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 800px;
-      border-radius: 16px;
-      background-image: url('./img/fondo.png');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .screen {
-      background: linear-gradient(90deg, #5D54A4, #7C78B8);
-      position: relative;
-      height: 600px;
-      width: 360px;
-      box-shadow: 0px 0px 24px #5C5696;
-      border-radius: 16px;
-    }
-
-    .screen__content {
-      z-index: 1;
-      position: relative;
-      height: 100%;
-    }
-
-    .screen__background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 0;
-      -webkit-clip-path: inset(0 0 0 0);
-      clip-path: inset(0 0 0 0);
-    }
-
-    .screen__background__shape {
-      transform: rotate(45deg);
-      position: absolute;
-    }
-
-    .screen__background__shape1 {
-      height: 520px;
-      width: 520px;
-      background: #FFF;
-      top: -50px;
-      right: 120px;
-      border-radius: 0 72px 0 0;
-    }
-
-    .screen__background__shape2 {
-      height: 220px;
-      width: 220px;
-      background: #6C63AC;
-      top: -172px;
-      right: 0;
-      border-radius: 32px;
-    }
-
-    .screen__background__shape3 {
-      height: 540px;
-      width: 190px;
-      background: linear-gradient(270deg, #5D54A4, #6A679E);
-      top: -24px;
-      right: 0;
-      border-radius: 32px;
-    }
-
-    .screen__background__shape4 {
-      height: 400px;
-      width: 200px;
-      background: #7E7BB9;
-      top: 420px;
-      right: 50px;
-      border-radius: 60px;
-    }
-
-    .login {
-      width: 320px;
-      padding: 30px;
-      padding-top: 156px;
-    }
-
-    .login__field {
-      padding: 20px 0px;
-      position: relative;
-    }
-
-    .login__icon {
-      position: absolute;
-      top: 30px;
-      color: #7875B5;
-    }
-
-    .login__input {
-      border: none;
-      border-bottom: 2px solid #D1D1D4;
-      background: none;
-      padding: 10px;
-      padding-left: 24px;
-      font-weight: 700;
-      width: 75%;
-      transition: .2s;
-    }
-
-    .login__input:active,
-    .login__input:focus,
-    .login__input:hover {
-      outline: none;
-      border-bottom-color: #6A679E;
-    }
-
-    .login__submit {
-      background: #fff;
-      font-size: 14px;
-      margin-top: 30px;
-      padding: 16px 20px;
-      border-radius: 26px;
-      border: 1px solid #D4D3E8;
-      text-transform: uppercase;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      width: 100%;
-      color: #4C489D;
-      box-shadow: 0px 2px 2px #5C5696;
-      cursor: pointer;
-      transition: .2s;
-    }
-
-    .login__submit:active,
-    .login__submit:focus,
-    .login__submit:hover {
-      border-color: #6A679E;
-      outline: none;
-    }
-
-    .button__icon {
-      font-size: 24px;
-      margin-left: auto;
-      color: #7875B5;
-    }
-
-    .social-login {
-      position: absolute;
-      height: 140px;
-      width: 160px;
-      text-align: center;
-      bottom: 0px;
-      right: 0px;
-      color: #fff;
-    }
-
-    .social-icons {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: -30px;
-
-    }
-
-    .social-login__icon {
-      padding: 20px 10px;
-      color: #fff;
-      text-decoration: none;
-      text-shadow: 0px 0px 8px #7875B5;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .social-login__icon:hover {
-      transform: scale(1.2);
-
-    }
-
-    .titletext {
-      font-family: 'Raleway', Arial;
-      font-size: 35px;
-      margin-top: 60px;
-      margin-bottom: -80px;
-    }
-  </style>
   <title>Login | Academista</title>
-
-
-
-
-
-
-
 </head>
 
 <body>
@@ -352,8 +57,8 @@
           <div class="screen__content">
             <div class="title">
               <p>‎</p>
-          <p class="titletext">Iniciar sesión</p>
-        </div>
+              <p class="titletext">Iniciar sesión</p>
+            </div>
             <form class="login">
               <div class="login__field">
                 <i class="login__icon fas fa-user"></i>
@@ -369,15 +74,15 @@
               </button>
             </form>
             <div class="social-login">
-              <h3>log in via</h3>
-              <div class="social-icons">
-                <a href="#" class="social-login__icon fab fa-instagram"><img src="./img/google.svg" draggable="false"
-                    style="height: 20px;"></a>
-                <a href="#" class="social-login__icon fab fa-facebook"><img src="./img/microsoft.svg" draggable="false"
-                    style="height: 20px;"></a>
-                <a href="#" class="social-login__icon fab fa-twitter"><img src="./img/facebook.svg" draggable="false"
-                    style="height: 20px;"></a>
-              </div>
+                <h3>log in via</h3>
+                <div class="social-icons-login">
+                  <a href="#" class="social-login__icon fab fa-instagram"><img src="./img/google.svg" draggable="false"
+                      style="height: 20px;"></a>
+                  <a href="#" class="social-login__icon fab fa-facebook"><img src="./img/microsoft.svg"
+                      draggable="false" style="height: 20px;"></a>
+                  <a href="#" class="social-login__icon fab fa-twitter"><img src="./img/facebook.svg" draggable="false"
+                      style="height: 20px;"></a>
+                </div>
             </div>
           </div>
           <div class="screen__background">
@@ -396,7 +101,8 @@
 
 
   <div class="divfinaldepagina">
-    <img src="./img/a-by-im.png" draggable="false">
+
+    <img src="/img/a-by-im.png" draggable="false" class="a-by-im">
 
     <div class="verticaldiv">
       <h4
@@ -405,12 +111,12 @@
       </h4>
 
       <a href="#acercade">
-        <p style="margin-left: 20px; margin-bottom: -14px;">
+        <p style="margin-left: 20px; margin-bottom: -10px;">
           <font color="white">Sobre academista</font>
         </p>
       </a>
       <a href="https://www.indifferentminds.org" target="_blank">
-        <p style="margin-left: 20px; margin-bottom: -14px;">
+        <p style="margin-left: 20px; margin-bottom: -10px;">
           <font color="white">Indifferent minds</font>
         </p>
       </a>
@@ -421,25 +127,25 @@
 
     <div style="margin-right: 20px;"></div>
 
-    <div class="verticaldiv">
+    <div class="vertical1div">
       <h4
         style="text-decoration: underline; text-decoration-color: grey; text-underline-offset: 10px; text-decoration-thickness: 1px; margin-left: 20px;">
         <font color="5b5b5b">Recursos</font>
       </h4>
 
       <a href="foro">
-        <p style="margin-left: 20px; margin-bottom: -14px;">
+        <p style="margin-left: 20px; margin-bottom: -10px; color: white;">
           <font color="white">Foro</font>
         </p>
       </a>
       <a href="login">
-        <p style="margin-left: 20px; margin-bottom: -14px;">
-          <font color="white">Iniciar Sesion</font>
+        <p style="margin-left: 20px; margin-bottom: -10px; color: white;">
+          Iniciar Sesion
         </p>
       </a>
       <a href="#planes">
-        <p style="margin-left: 20px; margin-bottom: -14px;">
-          <font color="white">Planes</font>
+        <p style="margin-left: 20px; margin-bottom: -10px; color: white;">
+          Planes
         </p>
       </a>
 
@@ -449,17 +155,18 @@
 
     <div class="contactofinal" id="contacto">
       <p style="margin-top: 20px; font-size: 25px; margin-bottom: 10px;">Contacto</p>
-      Contactanos a traves del mail: <a href="mailto:academista@indifferentminds.org" style="text-decoration: none; color: rgb(255, 207, 207);">academista@indifferentminds.org</a>
+      Contactanos a traves del mail: <a href="mailto:academista@indifferentminds.org"
+        style="text-decoration: none; color: #A1C8FF;">academista@indifferentminds.org</a>
       <div class="social-icons">
-        <a href="https://x.com/academista_edu" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)"
-          class="social-icon">
+        <a href="https://x.com/academista_edu" target="_blank" rel="noopener noreferrer"
+          aria-label="X (formerly Twitter)" class="social-icon">
           <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em">
             <path
               d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
           </svg>
         </a>
-        <a href="https://instagram.com/academista_education" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
-          class="social-icon">
+        <a href="https://instagram.com/academista_education" target="_blank" rel="noopener noreferrer"
+          aria-label="Instagram" class="social-icon">
           <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em">
             <path
               d="M20.947 8.305a6.53 6.53 0 00-.419-2.216 4.61 4.61 0 00-2.633-2.633 6.606 6.606 0 00-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 00-2.185.42 4.607 4.607 0 00-2.633 2.633 6.554 6.554 0 00-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 002.634 2.632 6.584 6.584 0 002.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 002.186-.419 4.615 4.615 0 002.633-2.633c.263-.7.404-1.438.419-2.187.043-.962.056-1.267.056-3.71-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 010 9.246zm4.807-8.339a1.077 1.077 0 01-1.078-1.078 1.077 1.077 0 112.155 0c0 .596-.482 1.078-1.077 1.078z" />
@@ -479,14 +186,14 @@
               d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0014.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z" />
           </svg>
         </a>
-
-
       </div>
       <div style="margin-top: 10px;">
         <p style="display: flex; justify-content: left;"><img src="./img/unequal.svg" draggable="false"
             style="height: 20px; margin-right: 5px;">Made by Indifferent Minds Team </p>
       </div>
     </div>
+
+
   </div>
 </body>
 

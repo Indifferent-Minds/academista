@@ -13,6 +13,7 @@
   <meta property="og:site_name" content="Academista" />
   <link rel="shortcut icon" href="./img/logo.png">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <title>Ciencia | Academista</title>
 </head>
@@ -36,134 +37,137 @@
     </div>
   </div>
 
-  <div class="contenedor">
-    <main>
-      <aside class="filtros">
-        <div class="filtros-cabecera">
-          <h2>Filtros</h2>
-          <button id="limpiar-filtros">Limpiar Todo</button>
-        </div>
-        <div class="grupo-filtro">
-          <div class="titulo-filtro" onclick="alternarContenidoFiltro(this)">
-            <h3>Nivel de Dificultad</h3>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="contenido-filtro">
-            <div class="item-checkbox">
-              <input type="checkbox" id="principiante" value="principiante">
-              <label for="principiante">Principiante</label>
-            </div>
-            <div class="item-checkbox">
-              <input type="checkbox" id="intermedio" value="intermedio">
-              <label for="intermedio">Intermedio</label>
-            </div>
-            <div class="item-checkbox">
-              <input type="checkbox" id="avanzado" value="avanzado">
-              <label for="avanzado">Avanzado</label>
-            </div>
-            <div class="item-checkbox">
-              <input type="checkbox" id="experto" value="experto">
-              <label for="experto">Experto</label>
-            </div>
-          </div>
-        </div>
-        <button id="aplicar-filtros" class="boton-aplicar">Aplicar Filtros</button>
-      </aside>
 
-      <section class="lista-videos">
-        <div class="cabecera-lista">
-          <h2><span id="contador-videos">6</span> Videos Encontrados</h2>
-          <div class="opciones-ordenar">
-            <span>Ordenar por:</span>
-            <div class="botones-ordenar">
-              <button class="boton-ordenar activo" data-sort="fecha">Más Recientes</button>
-              <button class="boton-ordenar" data-sort="duracion">Más Antiguos</button>
+
+
+  <h1 style="margin-top: 100px;">
+    <center>
+      <h1 class="gradient-text blue-emerald" style="font-size: clamp(40px, 3vw, 55px); font-weight: 0;">Matemáticas</h1>
+    </center>
+  </h1>
+
+
+  <main class="buscarvideos-contenido-principal">
+    <div class="buscarvideos-contenedor">
+      <div class="buscarvideos-disposicion-contenido">
+        <div class="buscarvideos-filtros-movil">
+          <button class="buscarvideos-boton-filtro">
+            <span class="buscarvideos-texto-boton-filtro">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="buscarvideos-icono-filtro">
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+              </svg>
+              Filtros
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="buscarvideos-icono-chevron">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+
+          <div class="buscarvideos-panel-filtros-movil">
+            <h3 class="buscarvideos-titulo-filtro">Nivel de dificultad</h3>
+            <div class="buscarvideos-opciones-filtro">
+              <div class="buscarvideos-opcion-filtro">
+                <input type="checkbox" id="mobile-Principiante" class="buscarvideos-checkbox-filtro"
+                  data-nivel="Principiante">
+                <label for="mobile-Principiante" class="buscarvideos-etiqueta-filtro">Principiante</label>
+              </div>
+              <div class="buscarvideos-opcion-filtro">
+                <input type="checkbox" id="mobile-Intermedio" class="buscarvideos-checkbox-filtro"
+                  data-nivel="Intermedio">
+                <label for="mobile-Intermedio" class="buscarvideos-etiqueta-filtro">Intermedio</label>
+              </div>
+              <div class="buscarvideos-opcion-filtro">
+                <input type="checkbox" id="mobile-Avanzado" class="buscarvideos-checkbox-filtro" data-nivel="Avanzado">
+                <label for="mobile-Avanzado" class="buscarvideos-etiqueta-filtro">Avanzado</label>
+              </div>
+              <div class="buscarvideos-opcion-filtro">
+                <input type="checkbox" id="mobile-Experto" class="buscarvideos-checkbox-filtro" data-nivel="Experto">
+                <label for="mobile-Experto" class="buscarvideos-etiqueta-filtro">Experto</label>
+              </div>
             </div>
+
+            <button class="buscarvideos-boton-limpiar-filtros">Limpiar filtros</button>
           </div>
         </div>
-        <div id="contenedor-videos">
-          <center>
-            <a href="#" class="enlace" data-nivel="experto" data-fecha="1999-03-19">
-              <img src="./img/unequal.svg" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="principiante" data-fecha="2025-03-19">
-              <img src="./img/miniaturas/video1.png" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="experto" data-fecha="1999-03-19">
-              <img src="./img/unequal.svg" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="principiante" data-fecha="2025-03-19">
-              <img src="./img/miniaturas/video1.png" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="experto" data-fecha="1999-03-19">
-              <img src="./img/unequal.svg" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="principiante" data-fecha="2025-03-19">
-              <img src="./img/miniaturas/video1.png" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="experto" data-fecha="1999-03-19">
-              <img src="./img/unequal.svg" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="principiante" data-fecha="2025-03-19">
-              <img src="./img/miniaturas/video1.png" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="experto" data-fecha="1999-03-19">
-              <img src="./img/unequal.svg" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="principiante" data-fecha="2025-03-19">
-              <img src="./img/miniaturas/video1.png" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="experto" data-fecha="1999-03-19">
-              <img src="./img/unequal.svg" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="principiante" data-fecha="2025-03-19">
-              <img src="./img/miniaturas/video1.png" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="experto" data-fecha="1999-03-19">
-              <img src="./img/unequal.svg" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="principiante" data-fecha="2025-03-19">
-              <img src="./img/miniaturas/video1.png" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="experto" data-fecha="1999-03-19">
-              <img src="./img/unequal.svg" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="principiante" data-fecha="2025-03-19">
-              <img src="./img/miniaturas/video1.png" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="experto" data-fecha="1999-03-19">
-              <img src="./img/unequal.svg" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="principiante" data-fecha="2025-03-19">
-              <img src="./img/miniaturas/video1.png" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="experto" data-fecha="1999-03-19">
-              <img src="./img/unequal.svg" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="principiante" data-fecha="2025-03-19">
-              <img src="./img/miniaturas/video1.png" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="experto" data-fecha="1999-03-19">
-              <img src="./img/unequal.svg" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="principiante" data-fecha="2025-03-19">
-              <img src="./img/miniaturas/video1.png" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="experto" data-fecha="1999-03-19">
-              <img src="./img/unequal.svg" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            <a href="#" class="enlace" data-nivel="principiante" data-fecha="2025-03-19">
-              <img src="./img/miniaturas/video1.png" style="height: 300px; margin-right: 20px; margin-bottom: 10px;">
-            </a>
-            
-          </center>
+
+        <aside class="buscarvideos-barra-lateral">
+          <div class="buscarvideos-contenido-barra-lateral">
+            <h2 class="buscarvideos-titulo-barra-lateral">Filtros</h2>
+
+            <div class="buscarvideos-seccion-filtro">
+              <h3 class="buscarvideos-titulo-filtro">Nivel de dificultad</h3>
+              <div class="buscarvideos-opciones-filtro">
+                <div class="buscarvideos-opcion-filtro">
+                  <input type="checkbox" id="Principiante" class="buscarvideos-checkbox-filtro"
+                    data-nivel="Principiante">
+                  <label for="Principiante" class="buscarvideos-etiqueta-filtro">Principiante</label>
+                </div>
+                <div class="buscarvideos-opcion-filtro">
+                  <input type="checkbox" id="Intermedio" class="buscarvideos-checkbox-filtro" data-nivel="Intermedio">
+                  <label for="Intermedio" class="buscarvideos-etiqueta-filtro">Intermedio</label>
+                </div>
+                <div class="buscarvideos-opcion-filtro">
+                  <input type="checkbox" id="Avanzado" class="buscarvideos-checkbox-filtro" data-nivel="Avanzado">
+                  <label for="Avanzado" class="buscarvideos-etiqueta-filtro">Avanzado</label>
+                </div>
+                <div class="buscarvideos-opcion-filtro">
+                  <input type="checkbox" id="Experto" class="buscarvideos-checkbox-filtro" data-nivel="Experto">
+                  <label for="Experto" class="buscarvideos-etiqueta-filtro">Experto</label>
+                </div>
+              </div>
+            </div>
+
+            <button class="buscarvideos-boton-limpiar-filtros">Limpiar filtros</button>
+          </div>
+        </aside>
+
+        <div class="buscarvideos-area-principal">
+          <div class="buscarvideos-cabecera-contenido">
+            <h1 class="buscarvideos-titulo-contenido"><span id="buscarvideos-contador">8</span> Videos Encontrados</h1>
+
+            <div class="buscarvideos-controles-ordenar">
+              <span class="buscarvideos-etiqueta-ordenar">Ordenar por:</span>
+              <button class="buscarvideos-boton-ordenar">
+                <span id="buscarvideos-texto-ordenar">Más recientes</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="buscarvideos-icono-ordenar">
+                  <path d="m3 9 4-4 4 4"></path>
+                  <path d="m3 15 4 4 4-4"></path>
+                  <line x1="14" y1="5" x2="21" y2="5"></line>
+                  <line x1="14" y1="12" x2="21" y2="12"></line>
+                  <line x1="14" y1="19" x2="21" y2="19"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="buscarvideos-cuadricula" id="buscarvideos-cuadricula">
+          </div>
+          <div class="buscarvideos-sin-resultados" id="buscarvideos-sin-resultados">
+            <p class="buscarvideos-texto-sin-resultados">No se encontraron videos con los filtros seleccionados.</p>
+            <button class="buscarvideos-boton-limpiar-filtros">Limpiar filtros</button>
+          </div>
         </div>
-      </section>
-    </main>
-  </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+
+
+
+
+
+
+
+
+
 
   <div class="divfinaldepagina">
-    <img src="./img/a-by-im.png" draggable="false" class="a-by-im">
+
+    <img src="/img/a-by-im.png" draggable="false" class="a-by-im">
 
     <div class="verticaldiv">
       <h4
@@ -217,7 +221,7 @@
     <div class="contactofinal" id="contacto">
       <p style="margin-top: 20px; font-size: 25px; margin-bottom: 10px;">Contacto</p>
       Contactanos a traves del mail: <a href="mailto:academista@indifferentminds.org"
-        style="text-decoration: none; color: rgb(255, 207, 207);">academista@indifferentminds.org</a>
+        style="text-decoration: none; color: #A1C8FF;">academista@indifferentminds.org</a>
       <div class="social-icons">
         <a href="https://x.com/academista_edu" target="_blank" rel="noopener noreferrer"
           aria-label="X (formerly Twitter)" class="social-icon">
