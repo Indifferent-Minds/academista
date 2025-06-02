@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="style.css">
   <title>Inicio | Academista</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
-  
+
 </head>
 
 <body>
@@ -81,7 +81,8 @@
         <div class="container-tematica">
 
           <p class="animated-text chooseit">
-            <font style="font-size: clamp(30px, 4vw, 50px);" class="gradient-text blue-violet">Elige lo que quieres aprender:</font>
+            <font style="font-size: clamp(30px, 4vw, 50px);" class="gradient-text blue-violet">Elige lo que quieres
+              aprender:</font>
           </p>
 
           <center>
@@ -238,7 +239,7 @@
                       <circle cx="5" cy="12" r="1" />
                     </svg>
                   </div>
-                  <h3 class="tematica-titulo">Otros</h3>
+                  <h3 class="tematica-titulo" id="acercade">Otros</h3>
                   <p class="tematica-descripcion">Programación, economía, filosofía y más</p>
                 </div>
               </a>
@@ -327,10 +328,11 @@
 
         <p class="gradient-text blue-violet" style="font-size: clamp(40px, 3vw, 55px); font-weight: 0;">Descubre nuestra
           Libreria</p>
-        <p style="font-size: 20px; margin-top: 10px; font-size: clamp(10px, 3vw, 20px);">Llena de informacion
+        <p style="font-size: 20px; margin-top: 10px; font-size: clamp(10px, 3vw, 20px);" id="planes">Llena de
+          informacion
           interesante para llenarte de ideas e
           imaginacion</p>
-        <a href="./libreria/" class="option libreria1" id="planes">
+        <a href="./libreria/" class="option libreria1">
           <span class="option-text">
             <font style="color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif;">Acceder</font>
           </span>
@@ -346,15 +348,135 @@
 
 
   <div class="planescontainer">
-    <center>
-      <p class="animated-text gradient-text blue-violet" style="font-size: clamp(40px, 3vw, 55px);">Planes</p>
-      <img src="./img/EjemploPlanes.png" draggable="false" class="animated-text" style="border-radius: 15px;">
-      <img src="./img/EjemploPlanes.png" draggable="false" class="animated-text" style="border-radius: 15px;">
-      <img src="./img/EjemploPlanes.png" draggable="false" class="animated-text" style="border-radius: 15px;">
-      <h3>‎ </h3>
+    <div class="planes-contenedor">
+      <div class="planes-grid">
+        <div class="planes-tarjeta">
+          <div class="planes-tarjeta-cabecera">
+            <h3 class="planes-tarjeta-titulo">Básico</h3>
+            <p class="planes-tarjeta-descripcion">Para aprendizaje basico</p>
+            <div class="planes-tarjeta-precio">
+              <span class="planes-precio-cantidad">€0</span>
+              <span class="planes-precio-periodo">/mes</span>
+            </div>
+          </div>
+          <div class="planes-tarjeta-contenido">
+            <ul class="planes-lista-caracteristicas">
+              <li class="planes-caracteristica">
+                <span class="planes-icono-check"></span>
+                <span style="margin-left: 10px;">Videos de nivel básico</span>
+              </li>
+              <li class="planes-caracteristica">
+                <span class="planes-icono-check"></span>
+                <span style="margin-left: 10px;">1 video de subida cada 2 semanas</span>
+              </li>
+              <li class="planes-caracteristica">
+                <span class="planes-icono-check"></span>
+                <span style="margin-left: 10px;">Soporte por email</span>
+              </li>
+              <li class="planes-caracteristica">
+                <span class="planes-icono-check"></span>
+                <span style="margin-left: 10px;">Notificaciones de nuevos videos</span>
+              </li>
+            </ul>
+          </div>
+          <div class="planes-tarjeta-pie">
+            <button class="planes-boton">Comenzar</button>
+          </div>
+        </div>
+
+        <div class="planes-tarjeta planes-tarjeta-destacada">
+          <div class="planes-etiqueta-popular">Popular</div>
+          <div class="planes-tarjeta-cabecera">
+            <h3 class="planes-tarjeta-titulo">Pro</h3>
+            <p class="planes-tarjeta-descripcion">Destinado a aquellos con una fuerte motivación por aprender</p>
+            <div class="planes-tarjeta-precio">
+              <span class="planes-precio-cantidad">€5</span>
+              <span class="planes-precio-periodo">/mes</span>
+            </div>
+          </div>
+          <div class="planes-tarjeta-contenido">
+            <ul class="planes-lista-caracteristicas">
+              <li class="planes-caracteristica">
+                <span class="planes-icono-check"></span>
+                <span style="margin-left: 10px;">Videos de nivel intermedio-avanzado</span>
+              </li>
+              <li class="planes-caracteristica">
+                <span class="planes-icono-check"></span>
+                <span style="margin-left: 10px;">3 videos de subida cada 2 semanas</span>
+              </li>
+              <li class="planes-caracteristica">
+                <span class="planes-icono-check"></span>
+                <span style="margin-left: 10px;">Soporte prioritario</span>
+              </li>
+            </ul>
+          </div>
+          <div class="planes-tarjeta-pie">
+            <button class="planes-boton planes-boton-destacado">Comenzar</button>
+          </div>
+        </div>
+
+        <div class="planes-tarjeta">
+          <div class="planes-tarjeta-cabecera">
+            <h3 class="planes-tarjeta-titulo">Premium</h3>
+            <p class="planes-tarjeta-descripcion">Para aquellos que necesitan más aprendizaje</p>
+            <div class="planes-tarjeta-precio">
+              <span class="planes-precio-cantidad">€8</span>
+              <span class="planes-precio-periodo">/mes</span>
+            </div>
+          </div>
+          <div class="planes-tarjeta-contenido">
+            <ul class="planes-lista-caracteristicas">
+              <li class="planes-caracteristica">
+                <span class="planes-icono-check"></span>
+                <span style="margin-left: 10px;">Videos de nivel avanzado</span>
+              </li>
+              <li class="planes-caracteristica">
+                <span class="planes-icono-check"></span>
+                <span style="margin-left: 10px;">6 videos de subida cada 2 semanas</span>
+              </li>
+              <li class="planes-caracteristica">
+                <span class="planes-icono-check"></span>
+                <span style="margin-left: 10px;">Soporte 24/7</span>
+              </li>
+              <li class="planes-caracteristica">
+                <span class="planes-icono-check"></span>
+                <span style="margin-left: 10px;">Consultas a la IA especializada en el curso</span>
+              </li>
+            </ul>
+          </div>
+          <div class="planes-tarjeta-pie">
+            <button class="planes-boton">Comenzar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const tarjetas = document.querySelectorAll('.planes-tarjeta');
+
+        tarjetas.forEach(tarjeta => {
+          tarjeta.addEventListener('mouseenter', function () {
+            this.style.transform = 'translateY(-5px)';
+          });
+
+          tarjeta.addEventListener('mouseleave', function () {
+            this.style.transform = 'translateY(0)';
+          });
+        });
+
+        const botones = document.querySelectorAll('.planes-boton');
+
+        botones.forEach(boton => {
+          boton.addEventListener('click', function () {
+            const planSeleccionado = this.closest('.planes-tarjeta').querySelector('.planes-tarjeta-titulo').textContent;
+            console.log(`Plan seleccionado: ${planSeleccionado}`);
+          });
+        });
+      });
+    </script>
 
 
-    </center>
   </div>
 
 
@@ -509,7 +631,7 @@
 
 
 
-    <div class="divfinaldepagina">
+  <div class="divfinaldepagina">
 
     <img src="./img/a-by-im.png" draggable="false" class="a-by-im">
 
@@ -529,6 +651,22 @@
           <font color="white">Indifferent minds</font>
         </p>
       </a>
+      <a href="legal/aviso-legal/" target="_blank">
+        <p style="margin-left: 20px; margin-bottom: 3px;">
+          <font color="white">Aviso legal</font>
+        </p>
+      </a>
+      <a href="legal/politica-de-privacidad/" target="_blank">
+        <p style="margin-left: 20px; margin-bottom: 3px;">
+          <font color="white">Política de privacidad</font>
+        </p>
+      </a>
+      <a href="legal/condiciones-de-uso/" target="_blank">
+        <p style="margin-left: 20px; margin-bottom: 3px;">
+          <font color="white">Condiciones de uso</font>
+        </p>
+      </a>
+
 
 
 

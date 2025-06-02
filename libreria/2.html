@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale1.0">
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Academista &#8212; Aprende todo tipo de cosas" />
+  <meta property="og:description"
+    content="¿Te gustaria aprender o enseñar algo? ¡Entonces esta es el sitio indicado para tipo!" />
+  <meta property="og:url" content="academista" />
+  <meta property="og:site_name" content="Academista" />
+  <link rel="shortcut icon" href="./img/logo.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../temas/matematicas/style.css">
+  <script src="script.js"></script>
+  <title>Libreria | Academista</title>
+
+  <style>
+
+  </style>
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="barra">
+    <a href="/" style="color: white; text-decoration: none;">
+      <div class="barra-izquierda">
+        <p>‎‎ ‎</p>
+        <img src="./img/logo.png" draggable="false">
+        <p class="nombrebarra">Academista</p>
+      </div>
+    </a>
+
+    <div class="barra-derecha">
+      <a href="/#acercade">Acerca de</a>
+      <a href="/#planes">Planes</a>
+      <a href="/#contacto">Contacto</a>
+      <a href="/foro">Foro</a>
+      <a href="/login" style="margin-right: 20px;">Iniciar Sesión</a>
+    </div>
+  </div>
+
+
+
+
+
+  <center>
+
+
+    <div class="fondobannerinicio">
+      <center>
+        <p style="margin-top: 100px; font-size: 70px;">Libreria Academista</p>
+        <p style="font-size: 20px; margin-top: -30px;">Aquí encontraras todo tipo de libros</p>
+      </center>
+    </div>
+
+    
+
+
+    <div class="search">
+      <label for="orden" style="font-size: 20px;">Ordenar por:</label>
+      <button class="buscarlibros-boton-ordenar" onchange="ordenarEnlaces()">
+        <span id="buscarlibros-texto-ordenar">Más recientes</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="buscarlibros-icono-ordenar">
+          <path d="m3 9 4-4 4 4"></path>
+          <path d="m3 15 4 4 4-4"></path>
+          <line x1="14" y1="5" x2="21" y2="5"></line>
+          <line x1="14" y1="12" x2="21" y2="12"></line>
+          <line x1="14" y1="19" x2="21" y2="19"></line>
+        </svg>
+      </button>
+    
+    
+    <script>
+        function ordenarEnlaces() {
+            const orden = document.getElementById("orden").value;
+            const contenedor = document.getElementById("enlaces");
+            const enlaces = Array.from(contenedor.getElementsByTagName("a"));
+            
+            enlaces.sort((a, b) => {
+                return orden === "antiguo" ? a.id - b.id : b.id - a.id;
+            });
+            
+            contenedor.innerHTML = "";
+            enlaces.forEach(enlace => contenedor.appendChild(enlace));
+        }
+    </script>
+    </div>
+
+  </center>
+
+
+  <div class="videolist" id="enlaces">
+    <a href="/a2y3f" id="1">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="2">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="3">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="4">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="5">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="6">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="7">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="8">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="9">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="10">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="11">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="12">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="13">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="14">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="15">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="16">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="17">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+    <a href="/a2y3f" id="18">
+      <div class="video">
+        <img src="./img/video1.png" draggable="false" style="height: 300px; margin: 20px;">
+      </div>
+    </a>
+
+  </div>
+
+
+
+
+  <div class="divfinaldepagina">
+    <img src="./img/a-by-im.png" draggable="false" class="a-by-im">
+
+    <div class="verticaldiv">
+      <h4
+        style="text-decoration: underline; text-decoration-color: grey; text-underline-offset: 10px; text-decoration-thickness: 1px; margin-left: 20px;">
+        <font color="5b5b5b">Acerca de</font>
+      </h4>
+
+      <a href="#acercade">
+        <p style="margin-left: 20px; margin-bottom: -14px;">
+          <font color="white">Sobre academista</font>
+        </p>
+      </a>
+      <a href="https://www.indifferentminds.org" target="_blank">
+        <p style="margin-left: 20px; margin-bottom: 3px;">
+          <font color="white">Indifferent minds</font>
+        </p>
+      </a>
+      <a href="legal/aviso-legal/" target="_blank">
+        <p style="margin-left: 20px; margin-bottom: 3px;">
+          <font color="white">Aviso legal</font>
+        </p>
+      </a>
+      <a href="legal/politica-de-privacidad/" target="_blank">
+        <p style="margin-left: 20px; margin-bottom: 3px;">
+          <font color="white">Política de privacidad</font>
+        </p>
+      </a>
+      <a href="legal/condiciones-de-uso/" target="_blank">
+        <p style="margin-left: 20px; margin-bottom: 3px;">
+          <font color="white">Condiciones de uso</font>
+        </p>
+      </a>
+
+
+
+    </d300
+
+    <div style="margin-right: 20px;"></div>
+
+    <div class="verticaldiv">
+      <h4
+        style="text-decoration: underline; text-decoration-color: grey; text-underline-offset: 10px; text-decoration-thickness: 1px; margin-left: 20px;">
+        <font color="5b5b5b">Recursos</font>
+      </h4>
+
+      <a href="foro">
+        <p style="margin-left: 20px; margin-bottom: -14px;">
+          <font color="white">Foro</font>
+        </p>
+      </a>
+      <a href="login">
+        <p style="margin-left: 20px; margin-bottom: -14px;">
+          <font color="white">Iniciar Sesion</font>
+        </p>
+      </a>
+      <a href="#planes">
+        <p style="margin-left: 20px; margin-bottom: -14px;">
+          <font color="white">Planes</font>
+        </p>
+      </a>
+
+
+    </div>
+
+
+    <div class="contactofinal" id="contacto">
+      <p style="margin-top: 20px; font-size: 25px; margin-bottom: 10px;">Contacto</p>
+      Contactanos a traves del mail: <a href="mailto:academista@indifferentminds.org" style="text-decoration: none; color: rgb(255, 207, 207);">academista@indifferentminds.org</a>
+      <div class="social-icons">
+        <a href="https://x.com/academista_edu" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)"
+          class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em">
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+        </a>
+        <a href="https://instagram.com/academista_education" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+          class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em">
+            <path
+              d="M20.947 8.305a6.53 6.53 0 00-.419-2.216 4.61 4.61 0 00-2.633-2.633 6.606 6.606 0 00-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 00-2.185.42 4.607 4.607 0 00-2.633 2.633 6.554 6.554 0 00-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 002.634 2.632 6.584 6.584 0 002.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 002.186-.419 4.615 4.615 0 002.633-2.633c.263-.7.404-1.438.419-2.187.043-.962.056-1.267.056-3.71-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 010 9.246zm4.807-8.339a1.077 1.077 0 01-1.078-1.078 1.077 1.077 0 112.155 0c0 .596-.482 1.078-1.077 1.078z" />
+            <circle cx="11.994" cy="11.979" r="3.003" />
+          </svg>
+        </a>
+        <a href="mailto:academista@indifferentminds.org" aria-label="Email" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em">
+            <path
+              d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+          </svg>
+        </a>
+        <a href="https://facebook.com/academista" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+          class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em">
+            <path
+              d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0014.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z" />
+          </svg>
+        </a>
+
+
+      </div>
+      <div style="margin-top: 10px;">
+        <p style="display: flex; justify-content: left;"><img src="./img/unequal.svg" draggable="false"
+            style="height: 20px; margin-right: 5px;">Made by Indifferent Minds Team </p>
+      </div>
+    </div>
+    
+  </div>
+</body>
+
+
+
+
+<script>
+
+
+
+
+</script>
+
+
+</html>

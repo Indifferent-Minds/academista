@@ -123,20 +123,7 @@ body {
 
 }
 
-.videolist {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 30px;
-}
 
-.video {
-    transition: transform 0.3s ease-in-out;
-}
-
-.video:hover {
-    transform: scale(1.04);
-}
 
 @media (max-width: 768px) {
     .verticaldiv, .contactofinal {
@@ -154,3 +141,115 @@ body {
 .a-by-im{
     width: 412px;
 }
+
+.buscarlibro-controles-ordenar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .buscarlibro-etiqueta-ordenar {
+    margin-right: 10px;
+    font-family: 'Inter';
+  }
+
+  .buscarlibro-boton-ordenar {
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .buscarlibro-boton-ordenar:hover {
+    background-color: #005fa3;
+  }
+
+  .buscarlibro-icono-ordenar {
+    width: 20px;
+    height: 20px;
+  }
+
+  .libros-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+
+  .libro {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+
+  .libro:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+  }
+
+  .libro img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .libro-info {
+    padding: 15px;
+  }
+
+  .libro-info h3 {
+    margin: 0 0 10px;
+    font-size: 1.1em;
+  }
+
+  .libro-info p {
+    margin: 4px 0;
+    font-size: 0.9em;
+    color: #555;
+  }
+
+  .libro-info a {
+    display: inline-block;
+    margin-top: 10px;
+    color: white;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9em;
+  }
+
+  .libro-info a:hover {
+    background: linear-gradient(135deg, #2564ebdc, #7c3aede1);
+  }
+
+  .quote {
+    margin: 3rem 0;
+    padding-left: 1.5rem;
+    border-left: 4px solid;
+    border-image: linear-gradient(to bottom, #2563eb, #7c3aed) 1;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 300;
+    color: #4b5563;
+  }
+  
+  
+  .quote-author {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6b7280;
+  }
