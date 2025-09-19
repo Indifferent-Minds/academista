@@ -12,12 +12,12 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 1px;
-  background-color: rgba(0, 0, 0, 0.363);
   backdrop-filter: blur(10px);
   color: white;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   flex-wrap: wrap;
+  color: #000;
 }
 
 .barra-izquierda {
@@ -41,13 +41,13 @@
 
 .barra-derecha a {
   text-decoration: none;
-  color: white;
+  color: black;
   font-weight: bold;
   transition: color 0.3s;
 }
 
 .barra-derecha a:hover {
-  color: #9ecdff;
+  color: black;
 }
 
 .nombrebarra {
@@ -57,7 +57,7 @@
 }
 
 .nombrebarra:hover {
-  color: #9ecdff;
+  color: black;
 }
 
 body {
@@ -795,7 +795,7 @@ p {
 
 @media (min-width: 768px) {
   .planes-grid {
-      grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -932,4 +932,96 @@ p {
 
 .planes-boton-destacado:hover {
   background-color: var(--planes-color-primario-hover);
+}
+
+.banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.banner-text {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+
+.banner-text h1 {
+  font-size: clamp(20px, 3.5vw, 60px);
+  margin: 0 0 16px;
+  color: #191918;
+  text-align: left;
+}
+
+
+.banner-text p {
+  font-size: 20px;
+  margin: 0 0 24px;
+  color: #191918;
+  text-align: left;
+}
+
+
+.buttons {
+  display: flex;
+  gap: 12px;
+}
+
+
+.btn {
+  padding: 13px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+
+.btn.primary {
+  background: #0075DE;
+  color: #fff;
+}
+
+
+.btn.secondary {
+  background: #E6F3FE;
+  color: #005BAB;
+}
+
+
+.banner-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+
+@media (max-width: 768px) {
+  .banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner-text {
+    max-width: 100%;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .banner-image {
+    margin-top: 20px;
+  }
 }
