@@ -12,12 +12,13 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 1px;
+  background-color: rgba(0, 0, 0, 0.363);
   backdrop-filter: blur(10px);
   color: white;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   flex-wrap: wrap;
-  color: #000;
+  color: #191918;
 }
 
 .barra-izquierda {
@@ -41,13 +42,13 @@
 
 .barra-derecha a {
   text-decoration: none;
-  color: black;
+  color: white;
   font-weight: bold;
   transition: color 0.3s;
 }
 
 .barra-derecha a:hover {
-  color: black;
+  color: #9ecdff;
 }
 
 .nombrebarra {
@@ -57,7 +58,7 @@
 }
 
 .nombrebarra:hover {
-  color: black;
+  color: #9ecdff;
 }
 
 body {
